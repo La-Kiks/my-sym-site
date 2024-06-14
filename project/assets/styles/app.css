@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swapping K icon START */
+.default-image {
+    display: block;
+}
+
+.hover-image {
+    display: none;
+}
+
+a:hover .default-image {
+    display: none;
+}
+
+a:hover .hover-image {
+    display: block;
+}
+/* Swapping K icon END */

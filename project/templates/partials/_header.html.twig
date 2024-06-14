@@ -1,0 +1,180 @@
+<!-- Main navigation container -->
+<nav
+        class="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-2">
+    <div class="flex w-full flex-wrap items-center justify-between pr-3 pl-2">
+        <!-- Hamburger button for mobile view -->
+        <button
+                class="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+                type="button"
+                data-twe-collapse-init
+                data-twe-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <!-- Hamburger icon -->
+            <span
+                    class="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor">
+          <path
+                  fill-rule="evenodd"
+                  d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                  clip-rule="evenodd" />
+        </svg>
+      </span>
+        </button>
+
+        <!-- Collapsible navigation container -->
+        <div
+                class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                id="navbarSupportedContent1"
+                data-twe-collapse-item>
+            <!-- Logo -->
+            <a
+                    class="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900
+                    focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400
+                    dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+                    href="{{ path('post.index') }}">
+                <img
+                        src="{{ asset('build/images/Kicon.png') }}"
+                        style="height: 40px"
+                        alt="K Logo"
+                        loading="eager"
+                        class="default-image" />
+                <img
+                        src="{{ asset('build/images/Kiconyellow.png') }}"
+                        style="height: 40px"
+                        alt="K Logo Hover"
+                        loading="eager"
+                        class="hover-image" />
+            </a>
+            <!-- Left navigation links -->
+            <ul
+                    class="list-style-none me-auto flex flex-col ps-0 lg:flex-row"
+                    data-twe-navbar-nav-ref>
+                <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                    <!-- Dashboard link -->
+                    <a
+                            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+                            href="{{ path('post.index') }}"
+                            data-twe-nav-link-ref
+                    >Articles</a
+                    >
+                </li>
+                <!-- Team link -->
+                <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                    <a
+                            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+                            href="#"
+                            data-twe-nav-link-ref
+                    >Qui-suis-je ?</a
+                    >
+                </li>
+                <!-- Projects link -->
+                <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                    <a
+                            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+                            href="#"
+                            data-twe-nav-link-ref
+                    >Mes projets</a
+                    >
+                </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+
+        {% if app.user %}
+        <!-- Right elements -->
+        <div class="relative flex items-center">
+
+            <!-- Second dropdown container -->
+            <div
+                    class="relative"
+                    data-twe-dropdown-ref
+                    data-twe-dropdown-alignment="end">
+                <!-- Second dropdown trigger -->
+                <a
+                        class="flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                        href="#"
+                        id="dropdownMenuButton2"
+                        role="button"
+                        data-twe-dropdown-toggle-ref
+                        aria-expanded="false">
+                    <!-- User avatar -->
+                    <img
+                            src="{{ app.user.avatar }}"
+                            class="transition ease-in-out rounded-full hover:scale-110 duration-150"
+                            style="height: 35px; width: 35px"
+                            alt=""
+                            loading="lazy" />
+                </a>
+                <!-- Second dropdown menu -->
+                <ul
+                        class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
+                        aria-labelledby="dropdownMenuButton2"
+                        data-twe-dropdown-menu-ref>
+                    <!-- Second dropdown menu items -->
+{#                    <li>#}
+{#                        <a#}
+{#                                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"#}
+{#                                href="#"#}
+{#                                data-twe-dropdown-item-ref#}
+{#                        >Action</a#}
+{#                        >#}
+{#                    </li>#}
+                    <li>
+                        <a
+                                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
+                                href="#"
+                                data-twe-dropdown-item-ref
+                        >Mes articles</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
+                                href="{{ path('security.logout') }}"
+                                data-twe-dropdown-item-ref
+                        >Déconnexion</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% else %}
+            <div class="flex items-center">
+                <button
+                        type="button"
+                        data-twe-ripple-init
+                        data-twe-ripple-color="light"
+                        class="me-3 inline-block rounded px-2 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500">
+                    <a href ="{{ path('security.login') }}">Se connecter</a>
+                </button>
+                <button
+                        type="button"
+                        data-twe-ripple-init
+                        data-twe-ripple-color="light"
+                        class="me-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                    S'inscrire
+                </button>
+                <button
+                        type="button"
+                        data-twe-ripple-init
+                        data-twe-ripple-color="light"
+                        class="me-3 inline-block rounded bg-neutral-800 px-3 py-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-dark-3 transition duration-150 ease-in-out hover:bg-neutral-700 hover:shadow-dark-2 focus:bg-neutral-700 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-dark-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+          <span class="[&>svg]:w-4">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24">
+              <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </span>
+                </button>
+            </div>
+        {% endif %}
+    </div>
+</nav>
