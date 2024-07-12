@@ -29,6 +29,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Email]
     private string $email;
 
+    #[ORM\Column(name: 'email_verified', type: 'boolean')]
+    private ?bool $isVerified = false;
+
     #[ORM\Column(type: 'text', length: 255, nullable: true)]
     private ?string $username = null;
 
@@ -59,14 +62,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(name: 'github_id', type: 'string', length: 255, nullable: true)]
     private ?string $githubId = null;
 
-    #[ORM\Column(name: 'github_access_token', type: 'string', length: 255, nullable: true)]
-    private ?string $githubAccessToken = null;
-
     #[ORM\Column(name: 'google_id', type: 'string', length: 255, nullable: true)]
     private ?string $googleId = null;
-
-    #[ORM\Column(name: 'google_access_token', type: 'string', length: 255, nullable: true)]
-    private ?string $googleAccessToken = null;
 
     public function __construct()
     {
@@ -228,17 +225,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGithubAccessToken(): ?string
-    {
-        return $this->githubAccessToken;
-    }
-
-    public function setGithubAccessToken(?string $githubAccessToken): self
-    {
-        $this->githubAccessToken = $githubAccessToken;
-        return $this;
-    }
-
     public function getGoogleId(): ?string
     {
         return $this->googleId;
@@ -250,14 +236,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGoogleAccessToken(): ?string
-    {
-        return $this->googleAccessToken;
-    }
-
-    public function setGoogleAccessToken(?string $googleAccessToken): self
-    {
-        $this->googleAccessToken = $googleAccessToken;
-        return $this;
-    }
 }

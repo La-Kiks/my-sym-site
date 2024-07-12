@@ -6,8 +6,8 @@ use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Security\UserAuthenticator;
-//use App\Service\JWTService;
-//use App\Service\SendEmailService;
+use App\Service\JWTService;
+use App\Service\SendEmailService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,9 +25,9 @@ class RegistrationController extends AbstractController
         UserPasswordHasherInterface $userPasswordHasher,
         UserAuthenticatorInterface $userAuthenticator,
         UserAuthenticator $authenticator,
-        EntityManagerInterface $entityManager
-//        JWTService $jwt,
-//        SendEmailService $mail
+        EntityManagerInterface $entityManager,
+        JWTService $jwt,
+        SendEmailService $mail
     ): Response
     {
         $user = new User();
@@ -48,31 +48,31 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            // Générer le token
-//            // Header
-//            $header = [
-//                'typ' => 'JWT',
-//                'alg' => 'HS256'
-//            ];
-//
-//            // Payload
-//            $payload = [
-//                'user_id' => $user->getId()
-//            ];
-//
-//            // On génère le token
-//            $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
-//
-//            // Envoyer l'e-mail
-//            $mail->send(
-//                'no-reply@openblog.test',
-//                $user->getEmail(),
-//                'Activation de votre compte sur le site OpenBlog',
-//                'register',
-//                compact('user', 'token') // ['user' => $user, 'token'=>$token]
-//            );
+             // Générer le token
+            // Header
+            $header = [
+                'typ' => 'JWT',
+                'alg' => 'HS256'
+            ];
 
-//            $this->addFlash('success', 'Utilisateur inscrit, veuillez cliquer sur le lien reçu pour confirmer votre adresse e-mail');
+            // Payload
+            $payload = [
+                'user_id' => $user->getId()
+            ];
+
+            // On génère le token
+            $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
+
+            // Envoyer l'e-mail
+            $mail->send(
+                'no-reply@kilian-au.fr',
+                $user->getEmail(),
+                'Activation de votre compte sur Kilian-au',
+                'register',
+                compact('user', 'token') // ['user' => $user, 'token'=>$token]
+            );
+
+            $this->addFlash('success', 'Utilisateur inscrit, veuillez cliquer sur le lien reçu pour confirmer votre adresse e-mail');
 
             return $userAuthenticator->authenticateUser(
                 $user,
