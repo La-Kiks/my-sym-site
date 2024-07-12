@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}M'inscrire{% endblock %}
+
+
+
+{% block body %}
+    <h1>M'inscrire</h1>
+
+    {{ form_errors(form) }}
+
+    {{ form_start(form) }}
+    <div>
+        {{ form_row(form.firstName) }}
+    </div>
+    <div>
+        {{ form_row(form.lastName) }}
+    </div>
+    <div>
+        {{ form_row(form.username) }}
+    </div>
+    <div>
+        {{ form_row(form.email) }}
+    </div>
+    <div>
+        {{ form_row(form.plainPassword, {
+            label: 'Password'
+        }) }}
+        <div>
+            <p>Complexité du mot de passe : <span id="entropy" class="text-red">Très faible</span> (la complexité minimale acceptée est "Fort")</p>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn" id="submit-button" >M'inscrire</button>
+    {{ form_end(form) }}
+    <p>Déjà inscrit(e) ? <a href="{{ path('app_login') }}">Me connecter</a></p>
+{% endblock %}

@@ -4,25 +4,49 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
+        hwi_oauth.user.provider:
+            id: hwi_oauth.user.provider.entity
         app_user_provider:
             entity:
                 class: App\Entity\User
                 property: email
+    # Oauth firewall
+    # enable_authenticator_manager: true
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            pattern: ^/
+            oauth:
+                resource_owners:
+                    google: "/login/check-google"
+                    github: "/login/check-github"
+                login_path: /login
+                use_forward: false
+                failure_path: hwi_oauth_connect_registration
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider.entity
+                provider: hwi_oauth.user.provider
+                default_target_path: post.index
+
+            form_login:
+                login_path: app_login
+                check_path: app_login
+            logout:
+                path: app_logout
+
             lazy: true
             provider: app_user_provider
-            form_login:
-                login_path: security.login
-                check_path: security.login
-            logout:
-                path: security.logout
+
+            entry_point: form_login #oauth
             remember_me:
                 secret: '%kernel.secret'
                 lifetime: 604800 #1 week in seconds
+                path: /
+                #always_remember_me: true
+            custom_authenticator: App\Security\UserAuthenticator
 
 
             # activate different ways to authenticate

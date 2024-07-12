@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity('email', 'Email déjà utilisé...')]
+#[UniqueEntity('email', 'Ce mail est déjà utilisé.')]
 #[ORM\HasLifecycleCallbacks]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -22,12 +22,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank()]
-    private string $avatar;
+    private string $avatar = '0';
 
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     #[Assert\NotBlank()]
     #[Assert\Email]
     private string $email;
+
+    #[ORM\Column(type: 'text', length: 255, nullable: true)]
+    private ?string $username = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $lastName = null;
@@ -43,7 +46,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank()]
-    private string $password;
+    private string $password = '0';
 
     #[ORM\Column(type: 'datetime_immutable')]
     #[Assert\NotNull()]
@@ -52,6 +55,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime_immutable')]
     #[Assert\NotNull()]
     private \DateTimeImmutable $updatedAt;
+
+    #[ORM\Column(name: 'github_id', type: 'string', length: 255, nullable: true)]
+    private ?string $githubId = null;
+
+    #[ORM\Column(name: 'github_access_token', type: 'string', length: 255, nullable: true)]
+    private ?string $githubAccessToken = null;
+
+    #[ORM\Column(name: 'google_id', type: 'string', length: 255, nullable: true)]
+    private ?string $googleId = null;
+
+    #[ORM\Column(name: 'google_access_token', type: 'string', length: 255, nullable: true)]
+    private ?string $googleAccessToken = null;
 
     public function __construct()
     {
@@ -62,7 +77,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\PrePersist]
     public function prePersist(): void
     {
-        $this->avatar = 'https://api.dicebear.com/8.x/fun-emoji/svg?seed=' . $this->email;
+        $this->avatar = 'https://api.dicebear.com/8.x/fun-emoji/svg?seed=' . rand(0, 100);
     }
 
     #[ORM\PreUpdate]
@@ -94,6 +109,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
         return $this;
     }
 
@@ -191,4 +217,47 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->firstName . ' ' . $this->lastName;
     }
 
+    public function getGithubId(): ?string
+    {
+        return $this->githubId;
+    }
+
+    public function setGithubId(?string $githubId): self
+    {
+        $this->githubId = $githubId;
+        return $this;
+    }
+
+    public function getGithubAccessToken(): ?string
+    {
+        return $this->githubAccessToken;
+    }
+
+    public function setGithubAccessToken(?string $githubAccessToken): self
+    {
+        $this->githubAccessToken = $githubAccessToken;
+        return $this;
+    }
+
+    public function getGoogleId(): ?string
+    {
+        return $this->googleId;
+    }
+
+    public function setGoogleId(?string $googleId): self
+    {
+        $this->googleId = $googleId;
+        return $this;
+    }
+
+    public function getGoogleAccessToken(): ?string
+    {
+        return $this->googleAccessToken;
+    }
+
+    public function setGoogleAccessToken(?string $googleAccessToken): self
+    {
+        $this->googleAccessToken = $googleAccessToken;
+        return $this;
+    }
 }

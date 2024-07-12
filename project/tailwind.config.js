@@ -3,17 +3,30 @@ module.exports = {
   content: [
       './templates/**/*.html.twig',
       './assets/scripts/*.js',
-      './node_modules/tw-elements/js/**/*.js'
+      './node_modules/tw-elements/js/**/*.js',
+      "./src/**/*.{html,js}"
   ],
+    safelist: [
+        'bg-red-300',
+        'border-red-500',
+        'text-red-700',
+    ],
   theme: {
     extend: {
+        backgroundColor: {
+            "red3": "#F0B2BD",
+            "red5": "#E37285",
+            "red7": "#B0233A",
+        },
         colors: {
-            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"},
+
         }
     },
       fontFamily: {
           'body': [
               'Inter',
+              'ui-sans-serif',
               'ui-sans-serif',
               'system-ui',
               '-apple-system',

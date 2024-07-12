@@ -4,8 +4,12 @@
 
 {% block body %}
 
-    {% if error %}
-        <div class="error login">{ error.messageKey|trans(error.messageData, 'security') }}</div>{
+
+
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes déjà connecté en tant que : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
     {% endif %}
 
     <section class="h-screen">
@@ -22,20 +26,22 @@
 
                 <!-- Right column container with form -->
                 <div class="md:w-8/12 lg:ms-6 lg:w-5/12">
-                    <form name="login" action="{{ path('security.login') }}" method="post">
+                    <form name="login" action="{{ path('app_login') }}" method="post">
                         <!-- Email input -->
                         <div class="relative mb-6" data-twe-input-wrapper-init>
                             <input
                                     type="text"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-                                    id="username"
-                                    name="_username"
+                                    class="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                                    id="inputEmail"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
                                     placeholder="Email address"
                                     value="{{ last_username }}"/>
                             <label
-                                    for="username"
+                                    for="inputEmail"
                                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[1.15rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
-                            >Email address
+                            >Email
                             </label>
                         </div>
 
@@ -43,16 +49,20 @@
                         <div class="relative mb-6" data-twe-input-wrapper-init>
                             <input
                                     type="password"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-                                    id="password"
-                                    name="_password"
+                                    class="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                                    id="inputPassword"
+                                    name="password"
+                                    autocomplete="current-password" required
                                     placeholder="Password" />
                             <label
-                                    for="password"
+                                    for="inputPassword"
                                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[1.15rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
-                            >Password
+                            >Mot de passe
                             </label>
                         </div>
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}"
+                        >
 
                         <!-- Remember me checkbox -->
                         <div class="mb-6 flex items-center justify-between">
@@ -70,13 +80,20 @@
                                 </label>
                             </div>
 
+
                             <!-- Forgot password link -->
                             <a
-                                    href="#!"
+                                    href=""
                                     class="text-primary focus:outline-none dark:text-primary-400"
-                            >Forgot password?</a
+                            >Mot de passe oublié ?</a
                             >
                         </div>
+
+                        {% if error %}
+                            <div class="alert alert-danger mb-6 bg-red-300 border-l-4 border-red-500 text-red-700 p-2 rounded-lg">
+                                <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+                            </div>
+                        {% endif %}
 
                         <!-- Submit button -->
                         <button
@@ -84,58 +101,58 @@
                                 class="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                                 data-twe-ripple-init
                                 data-twe-ripple-color="light">
-                            Sign in
+                            Connexion
                         </button>
 
                         <!-- Divider -->
-{#                        <div#}
-{#                                class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300 dark:before:border-neutral-500 dark:after:border-neutral-500">#}
-{#                            <p#}
-{#                                    class="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">#}
-{#                                OR#}
-{#                            </p>#}
-{#                        </div>#}
+                        <div
+                                class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300 dark:before:border-neutral-500 dark:after:border-neutral-500">
+                            <p
+                                    class="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                                OR
+                            </p>
+                        </div>
 
-                        <!-- Social login buttons -->
-{#                        <a#}
-{#                                class="mb-3 flex w-full items-center justify-center rounded bg-primary px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"#}
-{#                                style="background-color: #3b5998"#}
-{#                                href="#!"#}
-{#                                role="button"#}
-{#                                data-twe-ripple-init#}
-{#                                data-twe-ripple-color="light">#}
-{#                            <!-- Facebook -->#}
-{#                            <span#}
-{#                                    class="me-2 fill-white [&>svg]:mx-auto [&>svg]:h-3.5 [&>svg]:w-3.5">#}
-{#              <svg#}
-{#                      xmlns="http://www.w3.org/2000/svg"#}
-{#                      viewBox="0 0 320 512">#}
-{#                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->#}
-{#                <path#}
-{#                        d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />#}
-{#              </svg>#}
-{#            </span>#}
-{#                            Continue with Facebook#}
-{#                        </a>#}
-{#                        <a#}
-{#                                class="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-info-3 transition duration-150 ease-in-out hover:bg-info-accent-300 hover:shadow-info-2 focus:bg-info-accent-300 focus:shadow-info-2 focus:outline-none focus:ring-0 active:bg-info-600 active:shadow-info-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"#}
-{#                                style="background-color: #55acee"#}
-{#                                href="#!"#}
-{#                                role="button"#}
-{#                                data-twe-ripple-init#}
-{#                                data-twe-ripple-color="light">#}
-{#                            <!-- X -->#}
-{#                            <span class="me-2 fill-white [&>svg]:h-3.5 [&>svg]:w-3.5">#}
-{#              <svg#}
-{#                      xmlns="http://www.w3.org/2000/svg"#}
-{#                      viewBox="0 0 512 512">#}
-{#                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->#}
-{#                <path#}
-{#                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />#}
-{#              </svg>#}
-{#            </span>#}
-{#                            Continue with X#}
-{#                        </a>#}
+                        <!-- Github -->
+                        <a
+                                class="mb-3 flex bg-neutral-800 w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                href="{{ path('hwi_oauth_service_redirect', {'service': 'github' }) }}"
+                                role="button"
+                                data-twe-ripple-init
+                                data-twe-ripple-color="light">
+                            <span
+                                    class="me-2 fill-white [&>svg]:mx-auto [&>svg]:h-3.5 [&>svg]:w-3.5">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24">
+                          <path
+                                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+            </span>
+                            Connexion avec Github
+                        </a>
+                        <!-- Gmail -->
+                        <a
+                                class="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-info-3 transition duration-150 ease-in-out hover:bg-info-accent-300 hover:shadow-info-2 focus:bg-info-accent-300 focus:shadow-info-2 focus:outline-none focus:ring-0 active:bg-info-600 active:shadow-info-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                style="background-color: #DD4B39"
+                                href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}"
+                                role="button"
+                                data-twe-ripple-init
+                                data-twe-ripple-color="light">
+
+                            <span class="me-2 fill-white [&>svg]:h-3.5 [&>svg]:w-3.5">
+              <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 488 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                            <path
+                                    d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+                        </svg>
+            </span>
+                            Connexion avec Gmail
+                        </a>
                     </form>
                 </div>
             </div>

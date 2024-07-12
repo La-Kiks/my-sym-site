@@ -19,7 +19,7 @@ import {
 } from "tw-elements";
 import Like from './scripts/like';
 
-initTWE({ Collapse, Dropdown, Input, Modal, Ripple });
+initTWE({ Collapse, Dropdown, Input, Modal, Ripple }, { allowReinits: true });
 
 console.log('Webpack Encore is working ! ');
 

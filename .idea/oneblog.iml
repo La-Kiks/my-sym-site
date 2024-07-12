@@ -149,6 +149,8 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/dbrekelmans/bdi" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/php-webdriver/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/panther" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/hwi/oauth-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/project/var" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

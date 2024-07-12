@@ -54,6 +54,11 @@ start: ## Start app
 docker-start:
 	$(DOCKER_COMPOSE) up -d
 
+build: ## Build images and then start app
+	$(MAKE) docker-build
+docker-build:
+	$(DOCKER_COMPOSE) up -d --build
+
 stop: ## Stop app
 	$(MAKE) docker-stop
 docker-stop:
