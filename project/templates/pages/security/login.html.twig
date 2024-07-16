@@ -4,14 +4,6 @@
 
 {% block body %}
 
-
-
-    {% if app.user %}
-        <div class="mb-3">
-            Vous êtes déjà connecté en tant que : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-        </div>
-    {% endif %}
-
     <section class="h-screen">
         <div class="container h-full px-6 py-24">
             <div
@@ -26,6 +18,21 @@
 
                 <!-- Right column container with form -->
                 <div class="md:w-8/12 lg:ms-6 lg:w-5/12">
+                    <!-- Already connected -->
+                    {% if app.user %}
+                        <div class="mb-6 bg-sky-300 border-l-4 border-sky-500 text-sky-700 p-2 rounded-lg">
+                            <p>Vous êtes déjà connecté en tant que : {{ app.user.userIdentifier }}
+                                <a href="{{ path('app_logout') }}"
+                                class="flex mx-auto mt-2">
+                                    <button
+                                            type="button"
+                                            class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                                        Se déconnecter
+                                    </button>
+                                </a>
+                            </p>
+                        </div>
+                    {% else %}
                     <form name="login" action="{{ path('app_login') }}" method="post">
                         <!-- Email input -->
                         <div class="relative mb-6" data-twe-input-wrapper-init>
@@ -83,12 +90,12 @@
 
                             <!-- Forgot password link -->
                             <a
-                                    href=""
+                                    href="{{ path('forgotten_password') }}"
                                     class="text-primary focus:outline-none dark:text-primary-400"
                             >Mot de passe oublié ?</a
                             >
                         </div>
-
+                        <!-- Errors  -->
                         {% if error %}
                             <div class="alert alert-danger mb-6 bg-red-300 border-l-4 border-red-500 text-red-700 p-2 rounded-lg">
                                 <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
@@ -115,7 +122,7 @@
 
                         <!-- Github -->
                         <a
-                                class="mb-3 flex bg-neutral-800 w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                class="mb-3 flex bg-neutral-800 w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-neutral-600 hover:shadow-neutral-2  active:bg-neutral-600 active:shadow-neutral-700 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                                 href="{{ path('hwi_oauth_service_redirect', {'service': 'github' }) }}"
                                 role="button"
                                 data-twe-ripple-init
@@ -134,8 +141,7 @@
                         </a>
                         <!-- Gmail -->
                         <a
-                                class="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-info-3 transition duration-150 ease-in-out hover:bg-info-accent-300 hover:shadow-info-2 focus:bg-info-accent-300 focus:shadow-info-2 focus:outline-none focus:ring-0 active:bg-info-600 active:shadow-info-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                                style="background-color: #DD4B39"
+                                class="mb-3 flex bg-[#DD4B39] w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-info-3 transition duration-150 ease-in-out hover:bg-red-400 hover:shadow-info-2  active:bg-red-700 active:shadow-info-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                                 href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}"
                                 role="button"
                                 data-twe-ripple-init
@@ -154,6 +160,7 @@
                             Connexion avec Gmail
                         </a>
                     </form>
+                    {% endif %}
                 </div>
             </div>
         </div>

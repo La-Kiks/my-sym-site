@@ -26,8 +26,8 @@ services:
     App\Security\OAuthConnector:
         arguments:
             $properties:
-                'github': 'github'
-                'google': 'google'
+                'github': 'githubId'
+                'google': 'googleId'
     hwi_oauth.user.provider.entity:
         class: HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
         arguments:

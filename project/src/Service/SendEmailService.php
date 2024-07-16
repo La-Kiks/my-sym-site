@@ -29,6 +29,7 @@ class SendEmailService
         try {
             $this->mailer->send($email);
         } catch (TransportExceptionInterface $e) {
+            dd($e);
         }
     }
 }
