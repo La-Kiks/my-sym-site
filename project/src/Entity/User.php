@@ -21,7 +21,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\GeneratedValue('CUSTOM')]
     #[ORM\Column(type: 'uuid', unique: true)]
     #[ORM\CustomIdGenerator('doctrine.uuid_generator')]
-    private Uuid|string|null $id = null;
+    private ?Uuid $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank()]
