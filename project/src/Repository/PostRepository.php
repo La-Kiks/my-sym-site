@@ -5,19 +5,25 @@ namespace App\Repository;
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
+use App\Entity\User;
 use App\Model\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\Uid\Uuid;
+use Symfony\Bridge\Doctrine\Types\UuidType;
+
 
 /**
  * @extends ServiceEntityRepository<Post>
  */
 class PostRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry,
-                                private PaginatorInterface $paginatorInterface, )
+    public function __construct(
+        ManagerRegistry $registry,
+        private readonly PaginatorInterface $paginatorInterface,
+    )
     {
         parent::__construct($registry, Post::class);
     }
@@ -28,9 +34,11 @@ class PostRepository extends ServiceEntityRepository
      * @param Tag|null $tag
      * @return PaginationInterface
      */
-    public function findPublished(int $page,
-                                  ?Category $category = null,
-    ?Tag $tag = null): PaginationInterface
+    public function findPublished(
+        int $page,
+        ?Category $category = null,
+        ?Tag $tag = null
+    ): PaginationInterface
     {
         $data = $this->createQueryBuilder('p')
             ->where('p.state LIKE :state')
@@ -82,6 +90,22 @@ class PostRepository extends ServiceEntityRepository
             ->getResult();
 
         return $this->paginatorInterface->paginate($data, $searchData->page, 9);
+    }
+
+    public function findPostByUser(
+        int $page,
+        User $user
+    ): PaginationInterface
+    {
+        $userUuid = $user->getId();
+
+        $qb = $this->createQueryBuilder('p')
+            ->where('p.user = :userUuid')
+            ->setParameter('userUuid', $userUuid, UuidType::NAME)
+            ->getQuery()
+            ->getResult();
+
+            return $this->paginatorInterface->paginate($qb, $page, 15);
     }
 
 }

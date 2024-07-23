@@ -30,3 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         new Like(likeElements);
     }
 })
+
+// Quick Modal fix ->  refresh page
+document.getElementById('refreshButton').addEventListener('click', function() {
+    location.reload();
+});

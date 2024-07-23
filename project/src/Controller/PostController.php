@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Form\CommentType;
+use App\Form\PostType;
 use App\Form\SearchType;
 use App\Model\SearchData;
 use App\Repository\PostRepository;
@@ -13,12 +15,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class PostController extends AbstractController
 {
     #[Route('/', name: 'post.index', methods: ['GET'])]
-    public function index(PostRepository $postRepository,
-                          Request $request): Response
+    public function index(
+        PostRepository $postRepository,
+        Request $request
+    ): Response
     {
         $searchData = new SearchData();
         $form = $this->createForm(SearchType::class, $searchData);
@@ -45,19 +50,23 @@ class PostController extends AbstractController
 
 
     #[Route('/article/{slug}', name: 'post.show', methods: ['GET', 'POST'])]
-    public function show(EntityManagerInterface $em, Post $post, PostRepository $postRepository, Request $request): Response
+    public function show(
+        EntityManagerInterface $em,
+        Post $post,
+        Request $request
+    ): Response
     {
         $comment = new Comment();
         $comment->setPost($post);
-        if($this->getUser())
-        {
-            $comment->setAuthor($this->getUser());
-        }
+        $user = $this->getUser();
 
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
+
+        if($form->isSubmitted() && $form->isValid() && $user)
         {
+            $comment->setAuthor($user);
+
             $em->persist($comment);
             $em->flush();
 
@@ -68,6 +77,61 @@ class PostController extends AbstractController
         return $this->render('pages/blog/show.html.twig', [
             'form' => $form->createView(),
             'post' => $post
+        ]);
+    }
+
+    #[Route('/mes-articles', name: 'post.edit', methods: ['GET'])]
+    public function editArticle(
+        PostRepository $postRepository,
+        Request $request,
+        UserInterface $user
+    ): Response
+    {
+        if(!$user instanceof User){
+            throw new \Exception('Invalid user type');
+        }
+
+        $page = $request->query->getInt('page', 1);
+        $userId = $user->getId();
+
+        if($page){
+            $posts = $postRepository->findPostByUser($page, $user);
+        } else {
+            $posts = null;
+        }
+
+        return $this->render('pages/blog/edit_articles.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    #[Route('/nouvel-article', name: 'post.write', methods: ['GET', 'POST'])]
+    public function newArticle(
+        EntityManagerInterface $em,
+        Request $request,
+        UserInterface $user
+    ): Response
+    {
+        if(!$user instanceof User){
+            throw new \Exception('Invalid user type');
+        }
+
+        $post = new Post();
+        $post->setUser($user);
+
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em->persist($post);
+            $em->flush();
+
+            $this->addFlash('success', 'Article créé');
+            return $this->redirectToRoute('post.edit');
+        }
+
+        return $this->render('pages/blog/new_article.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

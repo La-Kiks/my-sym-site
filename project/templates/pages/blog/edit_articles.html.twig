@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Mes articles
+{% endblock %}
+
+{% block body %}
+    <div class="flex">
+
+        <div class="mb-6 text-surface dark:text-white w-full">
+            <div class="flex">
+                <h1 class="text-3xl my-8 mx-8"> Mes articles : </h1>
+                <a href="{{ path('post.write') }}">
+                    <button
+                            type="button"
+                            class="my-8 inline-block rounded border-2 border-primary px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:border-primary-accent-300 hover:bg-primary-50/50 hover:text-primary-accent-300 focus:border-primary-600 focus:bg-primary-50/50 focus:text-primary-600 focus:outline-none focus:ring-0 active:border-primary-700 active:text-primary-700 motion-reduce:transition-none dark:text-primary-500 dark:hover:bg-blue-950 dark:focus:bg-blue-950"
+                            data-twe-ripple-init>
+                        Écrire un article
+                    </button>
+                </a>
+            </div>
+            <div class="flex-col w-full p-2 m-2">
+                {% if posts %}
+                    {% for post in posts %}
+                        <div class="w-auto text-surface dark:text-white">
+                        {% include "components/_list.html.twig" %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="navigation flex justify-center mb-8">
+        {{  knp_pagination_render(posts) }}
+    </div>
+
+{% endblock %}

@@ -24,16 +24,25 @@ class CategoryTagFixtures extends Fixture implements DependentFixtureInterface
 
         // Category
         $categories = [];
-        for ($i=0; $i<10; $i++){
+        $list = ['Esport', 'Dev'];
+        foreach ($list as $element){
             $category = new Category();
-            $category->setName($faker->words(1,true) . '' . $i )
-            ->setDescription(
-                mt_rand(0,1) === 1 ? $faker->realText(254) : null
-            );
+            $category->setName($element);
 
             $manager->persist($category);
-            $categories[] = $category;
+            $categories[]=$category;
         }
+
+//        for ($i=0; $i<10; $i++){
+//            $category = new Category();
+//            $category->setName($faker->words(1,true) . '' . $i )
+//            ->setDescription(
+//                mt_rand(0,1) === 1 ? $faker->realText(254) : null
+//            );
+//
+//            $manager->persist($category);
+//            $categories[] = $category;
+//        }
 
         foreach ($posts as $post){
             for ($i = 0; $i < mt_rand(1,5); $i++){

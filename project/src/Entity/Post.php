@@ -28,7 +28,7 @@ class Post
 
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     #[Assert\NotBlank]
-    private string $slug;
+    private string $slug = 'placeholder';
 
     #[ORM\Column(type: 'text')]
     #[Assert\NotBlank]
@@ -60,6 +60,9 @@ class Post
 
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post', orphanRemoval: true)]
     private Collection $comments;
+
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'posts')]
+    private User $user;
 
     public function __construct()
     {
@@ -269,6 +272,17 @@ class Post
             }
         }
 
+        return $this;
+    }
+
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
         return $this;
     }
 

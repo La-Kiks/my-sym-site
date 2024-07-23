@@ -24,7 +24,7 @@ class Thumbnail
     private ?string $imageName = null;
 
     #[ORM\Column(type: 'integer')]
-    private ?string $imageSize = null;
+    private ?int $imageSize = null;
 
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $updatedAt;

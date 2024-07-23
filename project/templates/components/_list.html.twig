@@ -1,0 +1,27 @@
+<div class="flex flex-nowrap border-b-2 border-neutral-200">
+    <!-- Post view -->
+    <a
+            href="{{ path('post.show', {slug: post.slug}) }}"
+            class="block w-full cursor-pointer rounded-lg p-2
+            transition duration-500 hover:bg-slate-300 hover:text-black
+            focus:bg-zinc-50 focus:text-black focus:ring-0 active:bg-zinc-100
+            active:text-surface
+            dark:hover:bg-neutral-700/60 dark:hover:text-white dark:focus:bg-neutral-700/60 dark:focus:text-white
+            dark:active:bg-surface dark:active:text-white">
+        {{ post.title }}
+    </a>
+    <!-- Edit icon -->
+    <a href=""
+       class="block m-auto cursor-pointer rounded-lg p-2
+            transition duration-500 hover:bg-slate-300 hover:text-black
+            focus:bg-zinc-50 focus:text-black focus:ring-0 active:bg-zinc-100
+            active:text-surface
+            dark:hover:bg-neutral-700/60 dark:hover:text-white dark:focus:bg-neutral-700/60 dark:focus:text-white
+            dark:active:bg-surface dark:active:text-white">
+        <svg    class="h-8 w-8 text-slate-500"
+                width="24"  height="24"  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"  fill="none"
+                stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
+            <path d="M12 20h9" />  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+        </svg>
+    </a>
+</div>
