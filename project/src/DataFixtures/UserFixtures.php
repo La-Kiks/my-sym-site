@@ -31,7 +31,9 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
             ->setFirstName('Admin')
             ->setPassword(
                 $this->hasher->hashPassword($user, 'password')
-            );
+            )
+            ->setRoles(['ROLE_ADMIN'])
+        ;
 
         $manager->persist($user);
 

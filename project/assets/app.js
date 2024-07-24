@@ -1,10 +1,3 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
-
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 import 'tw-elements';
@@ -19,10 +12,12 @@ import {
 } from "tw-elements";
 import Like from './scripts/like';
 
+// Tw-elements
 initTWE({ Collapse, Dropdown, Input, Modal, Ripple }, { allowReinits: true });
 
 console.log('Webpack Encore is working ! ');
 
+// Likes register
 document.addEventListener('DOMContentLoaded', () => {
     // Like's system
     const likeElements = [].slice.call(document.querySelectorAll('a[data-action="like"]'));
@@ -32,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Quick Modal fix ->  refresh page
-document.getElementById('refreshButton').addEventListener('click', function() {
-    location.reload();
-});
+const refreshButton = document.querySelector('#refreshButton');
+if (refreshButton) {
+    refreshButton.addEventListener('click', function() {
+        location.reload();
+    });
+}
+

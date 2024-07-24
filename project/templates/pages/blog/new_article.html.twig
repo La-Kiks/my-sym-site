@@ -29,19 +29,21 @@
 
 
             <!--Content textarea-->
-            <div class="relative mb-6" data-twe-input-wrapper-init>
-      <textarea
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-              id="content"
-              rows="10"
-              name="{{ field_name(form.content) }}"
-              placeholder="Contenu">{{ field_value(form.content) }}</textarea>
-                <label
-                        for="content"
-                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-300 dark:peer-focus:text-primary"
-                > Contenu :
-                </label>
-            </div>
+            {{ form_row(form.content) }}
+{#            <div class="relative mb-6" data-twe-input-wrapper-init>#}
+{#      <textarea#}
+{#              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"#}
+{#              id="editor"#}
+{#              rows="10"#}
+{#              name="{{ field_name(form.content) }}"#}
+{#              placeholder="Contenu">{{ field_value(form.content) }}</textarea>#}
+
+{#                <label#}
+{#                        for="editor"#}
+{#                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-300 dark:peer-focus:text-primary"#}
+{#                > Contenu :#}
+{#                </label>#}
+{#            </div>#}
 
 
             <!--Categories-->
@@ -89,6 +91,7 @@
             </div>
 
         {{ form_rest(form) }}
+
             {% if not form.vars.valid %}
                 <div class="alert alert-danger mb-6 bg-red-300 border-l-4 border-red-500 text-red-700 p-2 rounded-lg">
                     <p class="text-lg font-semibold">Erreurs :</p>
@@ -106,6 +109,5 @@
         </form>
         {{ form_end(form) }}
     </div>
-
 
 {% endblock %}

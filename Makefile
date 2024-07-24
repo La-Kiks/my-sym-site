@@ -83,6 +83,9 @@ npm-update: ## Update all npm dependencies
 npm-watch: ## Update all npm dependencies
 	$(NPM) run watch
 
+npm-dev: ## Equivalent to npm run dev
+	$(NPM) run dev
+
 ## —— 📊 Database ——
 database-init: ## Init database
 	$(MAKE) database-drop

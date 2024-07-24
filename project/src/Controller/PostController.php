@@ -150,10 +150,9 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-
             $em->persist($post);
             $em->flush();
-            
+
             $this->addFlash('success', 'Article édité.');
             return $this->redirectToRoute('post.my_articles');
         }

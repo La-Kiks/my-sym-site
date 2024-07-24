@@ -4,13 +4,15 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Tag;
+
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
+
 
 class PostType extends AbstractType
 {
@@ -20,7 +22,7 @@ class PostType extends AbstractType
             ->add('title', TextType::class, [
                 'constraints' => [new NotBlank()]
             ])
-            ->add('content', TextareaType::class, [
+            ->add('content', TextType::class, [
                 'constraints' => [new NotBlank()]
             ])
             ->add('categories', EntityType::class, [
