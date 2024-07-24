@@ -80,8 +80,8 @@ class PostController extends AbstractController
         ]);
     }
 
-    #[Route('/mes-articles', name: 'post.edit', methods: ['GET'])]
-    public function editArticle(
+    #[Route('/mes-articles', name: 'post.my_articles', methods: ['GET'])]
+    public function myArticles(
         PostRepository $postRepository,
         Request $request,
         UserInterface $user
@@ -92,7 +92,6 @@ class PostController extends AbstractController
         }
 
         $page = $request->query->getInt('page', 1);
-        $userId = $user->getId();
 
         if($page){
             $posts = $postRepository->findPostByUser($page, $user);
@@ -127,11 +126,42 @@ class PostController extends AbstractController
             $em->flush();
 
             $this->addFlash('success', 'Article créé');
-            return $this->redirectToRoute('post.edit');
+            return $this->redirectToRoute('post.my_articles');
         }
 
         return $this->render('pages/blog/new_article.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    #[Route('/edit-article/{slug}', name: 'post.edit', methods: ['GET', 'POST'])]
+    public function editArticle(
+        EntityManagerInterface $em,
+        Post $post,
+        Request $request,
+        UserInterface $user
+    ): Response
+    {
+        if(!$user instanceof User){
+            throw new \Exception('Invalid user type');
+        }
+
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $em->persist($post);
+            $em->flush();
+            
+            $this->addFlash('success', 'Article édité.');
+            return $this->redirectToRoute('post.my_articles');
+        }
+
+        return $this->render('pages/blog/new_article.html.twig', [
+            'form' => $form->createView(),
+            'post' => $post
+        ]);
+
     }
 }
