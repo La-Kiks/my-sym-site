@@ -23,7 +23,7 @@ class TagController extends AbstractController
         $posts = $postRepository->findPublished($request->query->getInt('page', 1),
             null,
             $tag);
-        return $this->render('pages/tag/index.html.twig', [
+        return $this->render('pages/tag/contact_index.html.twig', [
             'tag' => $tag,
             'posts' => $posts
         ]);

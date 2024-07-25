@@ -20,7 +20,7 @@ class CategoryController extends AbstractController
     ): Response
     {
         $posts = $postRepository->findPublished($request->query->getInt('page', 1), $category);
-        return $this->render('pages/category/index.html.twig', [
+        return $this->render('pages/category/contact_index.html.twig', [
             'category' => $category,
             'posts' => $posts
         ]);

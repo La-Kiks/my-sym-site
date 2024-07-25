@@ -11,6 +11,8 @@ import {
     initTWE,
 } from "tw-elements";
 import Like from './scripts/like';
+import './scripts/clipboard.js'
+
 
 // Tw-elements
 initTWE({ Collapse, Dropdown, Input, Modal, Ripple }, { allowReinits: true });

@@ -29,7 +29,7 @@ security:
                 oauth_user_provider:
                     service: hwi_oauth.user.provider.entity
                 provider: hwi_oauth.user.provider
-                default_target_path: post.index
+                default_target_path: app_home
 
             form_login:
                 login_path: app_login

@@ -20,6 +20,11 @@ class Category
     #[ORM\JoinTable(name: 'categories_posts')]
     private Collection $posts;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getPosts(): Collection
     {
         return $this->posts;

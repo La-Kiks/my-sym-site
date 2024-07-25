@@ -55,7 +55,6 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            // TODO : vérifier la validité de l'email
             $user = $userRepository->findOneBy(['email' => $form->get('email')->getData()]);
 
             if($user){
@@ -119,7 +118,6 @@ class SecurityController extends AbstractController
                 $form->handleRequest($request);
 
                 if($form->isSubmitted() && $form->isValid()){
-                    // TODO verify data
                     $user->setPassword(
                         $userPasswordHasher->hashPassword(
                             $user,

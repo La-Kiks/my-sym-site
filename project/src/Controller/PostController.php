@@ -16,10 +16,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class PostController extends AbstractController
 {
-    #[Route('/', name: 'post.index', methods: ['GET'])]
+    #[Route('/articles', name: 'post.index', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function index(
         PostRepository $postRepository,
         Request $request
@@ -50,6 +52,7 @@ class PostController extends AbstractController
 
 
     #[Route('/article/{slug}', name: 'post.show', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function show(
         EntityManagerInterface $em,
         Post $post,
@@ -81,6 +84,7 @@ class PostController extends AbstractController
     }
 
     #[Route('/mes-articles', name: 'post.my_articles', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function myArticles(
         PostRepository $postRepository,
         Request $request,
@@ -105,6 +109,7 @@ class PostController extends AbstractController
     }
 
     #[Route('/nouvel-article', name: 'post.write', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function newArticle(
         EntityManagerInterface $em,
         Request $request,
@@ -135,6 +140,7 @@ class PostController extends AbstractController
     }
 
     #[Route('/edit-article/{slug}', name: 'post.edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function editArticle(
         EntityManagerInterface $em,
         Post $post,

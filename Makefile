@@ -6,6 +6,8 @@ PHP = $(EXEC) php
 COMPOSER = $(EXEC) composer
 NPM = $(EXEC) npm
 SYMFONY_CONSOLE = $(PHP) bin/console
+SYMFONY = $(EXEC) symfony console
+NAME = placeholder
 
 # Colors
 GREEN = /bin/echo -e "\x1b[32m\#\# $1\x1b[0m"
@@ -20,6 +22,9 @@ init: ## Init the project
 
 cache-clear: ## Clear cache
 	$(SYMFONY_CONSOLE) cache:clear
+
+controller: ## Create Symfony Controller with NAME=Controller
+	$(SYMFONY) make:controller $(NAME)
 
 ## —— ✅ Test ——
 .PHONY: tests

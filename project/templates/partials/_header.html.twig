@@ -36,7 +36,7 @@
                     class="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900
                     focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400
                     dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
-                    href="{{ path('post.index') }}">
+                    href="{{ path('app_home') }}">
                 <img
                         src="{{ asset('build/images/Kicon.png') }}"
                         style="height: 40px"
@@ -58,7 +58,7 @@
                     <!-- Dashboard link -->
                     <a
                             class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-                            href="{{ path('post.index') }}"
+                            href="{{ path('app_home') }}"
                             data-twe-nav-link-ref
                     >Articles</a
                     >
@@ -67,9 +67,9 @@
                 <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                     <a
                             class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-                            href="#"
+                            href="{{ path('app_contact') }}"
                             data-twe-nav-link-ref
-                    >Qui-suis-je ?</a
+                    >Contact</a
                     >
                 </li>
                 <!-- Projects link -->
@@ -124,6 +124,8 @@
 {#                        >Action</a#}
 {#                        >#}
 {#                    </li>#}
+
+                    {% if app.user.roles[0] == 'ROLE_ADMIN' %}
                     <li>
                         <a
                                 class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
@@ -132,6 +134,7 @@
                         >Mes articles</a
                         >
                     </li>
+                    {% endif %}
                     <li>
                         <a
                                 class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
