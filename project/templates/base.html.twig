@@ -24,8 +24,9 @@
                 } %}
             {% endfor %}
         {% endfor %}
-
+        <div class="container m-auto max-w-screen-xl flex flex-wrap items-center justify-between p-2">
         {% block body %}{% endblock %}
+        </div>
         {% include 'partials/_footer.html.twig' %}
     </body>
 </html>
