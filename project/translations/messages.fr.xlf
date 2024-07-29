@@ -133,6 +133,34 @@
         <source>app.footer.message</source>
         <target>Merci de votre visite ! Si ce site vous a été utile ou si vous souhaitez le soutenir, vos dons sont les bienvenus. Votre générosité fait toute la différence. Merci pour votre soutien ! </target>
       </trans-unit>
+      <trans-unit id="AOkXPzf" resname="app.password.chosenewpwd">
+        <source>app.password.chosenewpwd</source>
+        <target>Choisir un nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="zCY0kKn" resname="app.password.newpwd">
+        <source>app.password.newpwd</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="5ha7s1y" resname="app.password.confirm">
+        <source>app.password.confirm</source>
+        <target>Confirmer</target>
+      </trans-unit>
+      <trans-unit id="W4rn84n" resname="app.password.asktoresetpwd">
+        <source>app.password.asktoresetpwd</source>
+        <target>Réinitialiser le mot de passe ?</target>
+      </trans-unit>
+      <trans-unit id="dvxZ74w" resname="app.password.email">
+        <source>app.password.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="py.75T6" resname="app.password.errors">
+        <source>app.password.errors</source>
+        <target>Erreurs : </target>
+      </trans-unit>
+      <trans-unit id="j_1nMxu" resname="app.password.reset">
+        <source>app.password.reset</source>
+        <target>Réinitialiser</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

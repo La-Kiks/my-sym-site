@@ -133,6 +133,34 @@
         <source>app.footer.message</source>
         <target>Thank you for your visit! If you found this site useful or if you wish to support it, your donations are welcome. Your generosity makes all the difference. Thank you for your support !</target>
       </trans-unit>
+      <trans-unit id="AOkXPzf" resname="app.password.chosenewpwd">
+        <source>app.password.chosenewpwd</source>
+        <target>Choose a new password</target>
+      </trans-unit>
+      <trans-unit id="zCY0kKn" resname="app.password.newpwd">
+        <source>app.password.newpwd</source>
+        <target>New password</target>
+      </trans-unit>
+      <trans-unit id="5ha7s1y" resname="app.password.confirm">
+        <source>app.password.confirm</source>
+        <target>Confirm</target>
+      </trans-unit>
+      <trans-unit id="W4rn84n" resname="app.password.asktoresetpwd">
+        <source>app.password.asktoresetpwd</source>
+        <target>Reset password ?</target>
+      </trans-unit>
+      <trans-unit id="dvxZ74w" resname="app.password.email">
+        <source>app.password.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="py.75T6" resname="app.password.errors">
+        <source>app.password.errors</source>
+        <target>Errors : </target>
+      </trans-unit>
+      <trans-unit id="j_1nMxu" resname="app.password.reset">
+        <source>app.password.reset</source>
+        <target>Reset</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
