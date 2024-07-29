@@ -104,7 +104,7 @@ class RegistrationController extends AbstractController
                 $em->flush();
 
                 $this->addFlash('success', 'Utilisateur activé');
-                return $this->redirectToRoute('post.index');
+                return $this->redirectToRoute('app_home');
             }
         }
         $this->addFlash('danger', 'Le token est invalide ou a expiré');

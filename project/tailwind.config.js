@@ -3,66 +3,32 @@ module.exports = {
   content: [
       './templates/**/*.html.twig',
       './assets/scripts/*.js',
-      './node_modules/tw-elements/js/**/*.js',
+      "./node_modules/flowbite/**/*.js",
       "./src/**/*.{html,js}"
   ],
-    safelist: [
-        'bg-red-300',
-        'border-red-500',
-        'text-red-700',
+    plugins: [
+        require('flowbite/plugin')
     ],
-  theme: {
-    extend: {
-        backgroundColor: {
-            "red3": "#F0B2BD",
-            "red5": "#E37285",
-            "red7": "#B0233A",
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                'gold-tips': {
+                    '50': '#fdfce9',
+                    '100': '#fcfac5',
+                    '200': '#faf48e',
+                    '300': '#f7e74d',
+                    '400': '#f2d41d',
+                    '500': '#e2bc10',
+                    '600': '#c3930b',
+                    '700': '#9c6a0c',
+                    '800': '#815412',
+                    '900': '#6e4515',
+                    '950': '#402308',
+                },
+            }
         },
-        colors: {
-            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"},
-
-        }
     },
-      fontFamily: {
-          'body': [
-              'Inter',
-              'ui-sans-serif',
-              'ui-sans-serif',
-              'system-ui',
-              '-apple-system',
-              'system-ui',
-              'Segoe UI',
-              'Roboto',
-              'Helvetica Neue',
-              'Arial',
-              'Noto Sans',
-              'sans-serif',
-              'Apple Color Emoji',
-              'Segoe UI Emoji',
-              'Segoe UI Symbol',
-              'Noto Color Emoji'
-          ],
-          'sans': [
-              'Inter',
-              'ui-sans-serif',
-              'system-ui',
-              '-apple-system',
-              'system-ui',
-              'Segoe UI',
-              'Roboto',
-              'Helvetica Neue',
-              'Arial',
-              'Noto Sans',
-              'sans-serif',
-              'Apple Color Emoji',
-              'Segoe UI Emoji',
-              'Segoe UI Symbol',
-              'Noto Color Emoji'
-          ]
-      }
-  },
-    plugins: [require("tw-elements/plugin.cjs")],
-    darkMode: "class"
 }
 
 

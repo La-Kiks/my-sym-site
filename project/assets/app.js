@@ -10,6 +10,7 @@ import {
     Ripple,
     initTWE,
 } from "tw-elements";
+import 'flowbite';
 import Like from './scripts/like';
 import './scripts/clipboard.js'
 

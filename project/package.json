@@ -152,6 +152,7 @@
     "find-cache-dir": "^4.0.0",
     "find-up": "^6.3.0",
     "flat": "^5.0.2",
+    "flowbite": "^2.4.1",
     "follow-redirects": "^1.15.6",
     "forwarded": "^0.2.0",
     "fresh": "^0.5.2",

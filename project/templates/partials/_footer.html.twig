@@ -1,14 +1,13 @@
 <footer class="bg-zinc-50 text-center dark:bg-neutral-700 lg:text-left">
     <div class="bg-black/5 pt-4 pb-2 text-center text-surface dark:text-white">
-        <p> Merci de votre visite ! Si ce site vous a été utile ou si vous souhaitez le soutenir, vos dons sont les bienvenus.
-            Votre générosité fait toute la différence. Merci pour votre soutien ! </p>
+        <p>{{ 'app.footer.message'|trans }}</p>
         <a href="https://ko-fi.com/lakiks"
             class="p-1 flex items-center justify-center">
             <img
                     src="{{ asset('build/images/ko-fi.svg') }}"
                     style="height: 45px"
                     alt="kofi"
-                    loading="eager"/>
+                    loading="lazy"/>
         </a>
     </div>
 </footer>

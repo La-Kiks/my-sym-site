@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
       <trans-unit id="_orotqB" resname="vich_uploader.form_label.delete_confirm">
         <source>vich_uploader.form_label.delete_confirm</source>
-        <target>Supprimer?</target>
+        <target>Delete?</target>
       </trans-unit>
       <trans-unit id="Zk.KlSD" resname="vich_uploader.link.download">
         <source>vich_uploader.link.download</source>
-        <target>Télécharger</target>
+        <target>Download</target>
       </trans-unit>
       <trans-unit id="KsPiYSs" resname="app.menu.projects">
         <source>app.menu.projects</source>
-        <target>Mes projets</target>
+        <target>My projects</target>
       </trans-unit>
       <trans-unit id="u6QXYmx" resname="app.menu.settings">
         <source>app.menu.settings</source>
-        <target>Paramètres</target>
+        <target>Settings</target>
       </trans-unit>
       <trans-unit id="faZfPaw" resname="app.menu.logout">
         <source>app.menu.logout</source>
-        <target>Se déconnecter</target>
+        <target>Logout</target>
       </trans-unit>
       <trans-unit id="hkRicBS" resname="app.menu.login">
         <source>app.menu.login</source>
-        <target>Se connecter</target>
+        <target>Login</target>
       </trans-unit>
       <trans-unit id="H6A.FPw" resname="app.menu.register">
         <source>app.menu.register</source>
-        <target>S'inscrire</target>
+        <target>Register</target>
       </trans-unit>
       <trans-unit id="Bkudush" resname="app.menu.about">
         <source>app.menu.about</source>
-        <target>A propos</target>
+        <target>About</target>
       </trans-unit>
       <trans-unit id="fylnBLQ" resname="app.menu.services">
         <source>app.menu.services</source>
@@ -47,11 +47,11 @@
       </trans-unit>
       <trans-unit id="0M6xuig" resname="app.connect.alreadylogged">
         <source>app.connect.alreadylogged</source>
-        <target>Déjà connecté</target>
+        <target>Already logged</target>
       </trans-unit>
       <trans-unit id="vSczho2" resname="app.connect.logout">
         <source>app.connect.logout</source>
-        <target>Se déconnecter</target>
+        <target>Logout</target>
       </trans-unit>
       <trans-unit id="bDxJV2f" resname="app.connect.email">
         <source>app.connect.email</source>
@@ -59,35 +59,35 @@
       </trans-unit>
       <trans-unit id="egIHHmd" resname="app.connect.password">
         <source>app.connect.password</source>
-        <target>Mot de passe</target>
+        <target>Password</target>
       </trans-unit>
       <trans-unit id="j3GkwLm" resname="app.connect.rememberme">
         <source>app.connect.rememberme</source>
-        <target>Se souvenir de moi</target>
+        <target>Remember me</target>
       </trans-unit>
       <trans-unit id="yExM0Ck" resname="app.connect.forgottenpassword">
         <source>app.connect.forgottenpassword</source>
-        <target>Mot de passe oublié ?</target>
+        <target>Forgotten password ?</target>
       </trans-unit>
       <trans-unit id="R5U35N7" resname="app.connect.connect">
         <source>app.connect.connect</source>
-        <target>Se connecter</target>
+        <target>Connect</target>
       </trans-unit>
       <trans-unit id="OrQ0Yub" resname="app.connect.or">
         <source>app.connect.or</source>
-        <target>OU</target>
+        <target>OR</target>
       </trans-unit>
       <trans-unit id="tRQYEXt" resname="app.connect.github">
         <source>app.connect.github</source>
-        <target>Se connecter avec GitHub</target>
+        <target>Connect with GitHub</target>
       </trans-unit>
       <trans-unit id="4uyTEKR" resname="app.connect.gmail">
         <source>app.connect.gmail</source>
-        <target>Se connecter avec Gmail</target>
+        <target>Connect with Gmail</target>
       </trans-unit>
       <trans-unit id="80zD9yJ" resname="app.register.username">
         <source>app.register.username</source>
-        <target>Pseudo</target>
+        <target>Username</target>
       </trans-unit>
       <trans-unit id="8Trs67S" resname="app.register.email">
         <source>app.register.email</source>
@@ -95,43 +95,43 @@
       </trans-unit>
       <trans-unit id="3DhysGO" resname="app.register.password">
         <source>app.register.password</source>
-        <target>Mot de passe</target>
+        <target>Password</target>
       </trans-unit>
       <trans-unit id="Q8SGag8" resname="app.register.confirm.password">
         <source>app.register.confirm.password</source>
-        <target>Confirmer le mot de passe</target>
+        <target>Confirm password</target>
       </trans-unit>
       <trans-unit id="l713tB9" resname="app.register.firstname">
         <source>app.register.firstname</source>
-        <target>Prénom</target>
+        <target>Firstname</target>
       </trans-unit>
       <trans-unit id="ixBKVdn" resname="app.register.lastname">
         <source>app.register.lastname</source>
-        <target>Nom</target>
+        <target>Lastname</target>
       </trans-unit>
       <trans-unit id="lFiXNYW" resname="app.form.errors">
         <source>app.form.errors</source>
-        <target>Erreurs :</target>
+        <target>Errors</target>
       </trans-unit>
       <trans-unit id="bhTYigG" resname="app.register.register">
         <source>app.register.register</source>
-        <target>S'inscrire</target>
+        <target>Register</target>
       </trans-unit>
       <trans-unit id="k.bh0AK" resname="app.register.or">
         <source>app.register.or</source>
-        <target>OU</target>
+        <target>OR</target>
       </trans-unit>
       <trans-unit id="2HFU2Ra" resname="app.register.github">
         <source>app.register.github</source>
-        <target>S'inscrire avec GitHub</target>
+        <target>Register with GitHub</target>
       </trans-unit>
       <trans-unit id="Yyzv0Dc" resname="app.register.gmail">
         <source>app.register.gmail</source>
-        <target>S'inscrire avec Gmail</target>
+        <target>Register with Gmail</target>
       </trans-unit>
       <trans-unit id="sq5grHY" resname="app.footer.message">
         <source>app.footer.message</source>
-        <target>Merci de votre visite ! Si ce site vous a été utile ou si vous souhaitez le soutenir, vos dons sont les bienvenus. Votre générosité fait toute la différence. Merci pour votre soutien ! </target>
+        <target>Thank you for your visit! If you found this site useful or if you wish to support it, your donations are welcome. Your generosity makes all the difference. Thank you for your support !</target>
       </trans-unit>
     </body>
   </file>
