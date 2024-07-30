@@ -24,16 +24,19 @@ security:
                     google: "/login/check-google"
                     github: "/login/check-github"
                 login_path: /login
-                use_forward: false
                 failure_path: hwi_oauth_connect_registration
                 oauth_user_provider:
                     service: hwi_oauth.user.provider.entity
                 provider: hwi_oauth.user.provider
                 default_target_path: app_home
+                always_use_default_target_path: true
 
             form_login:
                 login_path: app_login
                 check_path: app_login
+                default_target_path: app_home
+                always_use_default_target_path: true
+
             logout:
                 path: app_logout
 

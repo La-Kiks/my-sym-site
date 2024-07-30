@@ -161,6 +161,46 @@
         <source>app.password.reset</source>
         <target>Réinitialiser</target>
       </trans-unit>
+      <trans-unit id="M.UJwEM" resname="app.contact.socials">
+        <source>app.contact.socials</source>
+        <target>Suivez moi ici :</target>
+      </trans-unit>
+      <trans-unit id="yUj5tnD" resname="app.contact.contact">
+        <source>app.contact.contact</source>
+        <target>Contactez moi via :</target>
+      </trans-unit>
+      <trans-unit id="zX6OcUZ" resname="app.contact.send-a-mesage">
+        <source>app.contact.send-a-mesage</source>
+        <target>Contact rapide :</target>
+      </trans-unit>
+      <trans-unit id="EOYDVmw" resname="app.contact.name">
+        <source>app.contact.name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="AFkmvVT" resname="app.contact.email">
+        <source>app.contact.email</source>
+        <target>Email *</target>
+      </trans-unit>
+      <trans-unit id="S.diJdX" resname="app.contact.message">
+        <source>app.contact.message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="sFqVCFO" resname="app.contact.get-a-copy-email">
+        <source>app.contact.get-a-copy-email</source>
+        <target>Recevoir une copie via mail</target>
+      </trans-unit>
+      <trans-unit id="AmXMWhr" resname="app.contact.errors">
+        <source>app.contact.errors</source>
+        <target>Erreurs :</target>
+      </trans-unit>
+      <trans-unit id="eXXxqZA" resname="app.contact.send-mail">
+        <source>app.contact.send-mail</source>
+        <target>Envoyer un mail</target>
+      </trans-unit>
+      <trans-unit id="RFwuzpo" resname="app.register.success">
+        <source>app.register.success</source>
+        <target>Enregistrement effectué avec succès !</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

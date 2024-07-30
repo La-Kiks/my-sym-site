@@ -35,7 +35,7 @@
       </trans-unit>
       <trans-unit id="Bkudush" resname="app.menu.about">
         <source>app.menu.about</source>
-        <target>About</target>
+        <target>About me</target>
       </trans-unit>
       <trans-unit id="fylnBLQ" resname="app.menu.services">
         <source>app.menu.services</source>
@@ -160,6 +160,46 @@
       <trans-unit id="j_1nMxu" resname="app.password.reset">
         <source>app.password.reset</source>
         <target>Reset</target>
+      </trans-unit>
+      <trans-unit id="M.UJwEM" resname="app.contact.socials">
+        <source>app.contact.socials</source>
+        <target>Follow me here :</target>
+      </trans-unit>
+      <trans-unit id="yUj5tnD" resname="app.contact.contact">
+        <source>app.contact.contact</source>
+        <target>Contact me using :</target>
+      </trans-unit>
+      <trans-unit id="zX6OcUZ" resname="app.contact.send-a-mesage">
+        <source>app.contact.send-a-mesage</source>
+        <target>Send a direct message :</target>
+      </trans-unit>
+      <trans-unit id="EOYDVmw" resname="app.contact.name">
+        <source>app.contact.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="AFkmvVT" resname="app.contact.email">
+        <source>app.contact.email</source>
+        <target>Email *</target>
+      </trans-unit>
+      <trans-unit id="S.diJdX" resname="app.contact.message">
+        <source>app.contact.message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="sFqVCFO" resname="app.contact.get-a-copy-email">
+        <source>app.contact.get-a-copy-email</source>
+        <target>Receive a copy of the message</target>
+      </trans-unit>
+      <trans-unit id="AmXMWhr" resname="app.contact.errors">
+        <source>app.contact.errors</source>
+        <target>_Errors :</target>
+      </trans-unit>
+      <trans-unit id="eXXxqZA" resname="app.contact.send-mail">
+        <source>app.contact.send-mail</source>
+        <target>Send mail</target>
+      </trans-unit>
+      <trans-unit id="RFwuzpo" resname="app.register.success">
+        <source>app.register.success</source>
+        <target>Registration successful !</target>
       </trans-unit>
     </body>
   </file>

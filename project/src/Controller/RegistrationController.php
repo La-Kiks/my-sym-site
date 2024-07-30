@@ -72,7 +72,7 @@ class RegistrationController extends AbstractController
                 compact('user', 'token') // ['user' => $user, 'token'=>$token]
             );
 
-            $this->addFlash('success', 'Utilisateur inscrit, veuillez cliquer sur le lien reçu pour confirmer votre adresse e-mail');
+            $this->addFlash('success', 'Utilisateur inscrit, un e-mail a été envoyé.  ');
 
             return $userAuthenticator->authenticateUser(
                 $user,
