@@ -26,6 +26,10 @@ cache-clear: ## Clear cache
 controller: ## Create Symfony Controller with NAME=Controller
 	$(SYMFONY) make:controller $(NAME)
 
+translations: ## Create Symfony Translation FR & EN
+	$(SYMFONY_CONSOLE) translation:extract --force fr  --domain=messages
+	$(SYMFONY_CONSOLE) translation:extract --force en  --domain=messages
+
 ## —— ✅ Test ——
 .PHONY: tests
 tests: ## Run all tests

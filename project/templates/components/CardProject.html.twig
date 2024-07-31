@@ -1,21 +1,27 @@
 <div{{ attributes }}>
     <!-- component html -->
-    <a href=""
-       class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl
-       hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <a href="{{ redirect }}"
+       class="grid grid-cols-1 gap-2 p-2 items-center bg-white border border-gray-200 rounded-lg shadow sm:grid-cols-2 hover:bg-gold-tips-100
+       w-96 h-fit  sm:h-fit sm:w-[650px] lg:h-[450px] lg:w-[450px] justify-items-center
+       dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
         <img
-                class="aspect-square object-contain w-fit h-40 sm:h-48 sm:w-48"
+                class="aspect-square object-contain w-fit h-48 sm:h-48 sm:w-48 rounded-lg"
                 src="{{ image }}" alt="Screenshot of the project">
 
-        <div class="flex flex-col justify-between p-4 leading-normal  border-t md:border-none">
+        <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ title }}</h5>
 
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ title }}</h5>
+        <div class="grid grid-cols-1 sm:col-span-2 gap-2 p-2 leading-normal w-full border-t ">
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
+            <p class="font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <span> Technos :</span>
-                {{ techno }}</p>
+            <p class="font-normal text-gray-700 dark:text-gray-400">
+                <span class="font-normal underline"> Techs :</span>
+                {{ techno }}
+            </p>
+            <p class="font-normal text-sm text-gray-500 italic dark:text-gray-400">
+                {{ language }}
+            </p>
+            <p class="font-normal text-blue-700 dark:text-gray-400"> {{ url }}</p>
         </div>
     </a>
 

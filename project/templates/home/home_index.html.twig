@@ -7,61 +7,69 @@
 
 <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
     <!-- Heading & PFP -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 mb-16 mt-4 drop-shadow-lg gap-4">
+    <div class="grid grid-cols-3 sm:grid-cols-2 my-8 sm:mb-16 sm:gap-4  gap-0 place-items-center">
         <!-- Heading -->
-        <div class="container max-w-7xl flex-col p-2 m-auto">
-            <h1 class="mb-4 text-3xl font-mono font-bold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
-                <span class="text-transparent bg-clip-text bg-gold-tips-400">
+        <div class="container col-span-2 sm:col-span-1  max-w-7xl flex-col p-2 m-auto text-left">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl lg:text-6xl">
+                <span class="p-0.5 ">
                     Kilian Audroin
                 </span>
                 <br>
-                Web Developer
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">
+                    Web Developer
+                </span>
             </h1>
-            <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-                Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.
+            <p class="sm:text-lg text-md font-normal text-left text-gray-500 lg:text-xl dark:text-gray-400">
+                {{ 'app.home.kiki.description.part1'|trans }}
+                <br>
+                {{ 'app.home.kiki.description.part2'|trans }}
             </p>
         </div>
         <!-- PFP -->
-        <div class="container p-2 w-auto flex sm:justify-end justify-center">
+        <div class="container p-2 w-auto sm:flex sm:justify-end justify-center">
             <img
-                    class="object-contain rounded-lg w-64 md:w-80 "
+                    class="object-contain rounded-lg w-32 sm:w-64 md:w-80 "
                     src="{{ asset('build/images/profile-pic-ki.jpg') }}" alt="A profile picture">
         </div>
     </div>
 
 
-    <div class="grid grid-cols-1  lg:grid-cols-2 w-auto place-items-center gap-4">
-        <twig:CardProject title="test"
-                          image="{{ asset('build/images/Kiconyellow.png') }}"
-                          url="test"
-                          description="test test test test test test test test test test test test test test test test test test "
-                          redirect="test"
-                          techno="test"
-                          class="klass"
+    <div class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4">
+        <twig:CardProject title="{{ 'app.project.title.symblog'|trans }}"
+                          image="{{ asset('build/images/Symblog thumbnail.png') }}"
+                          url="https://kilian-au.fr"
+                          description="{{ 'app.project.description.symblog'|trans }}"
+                          redirect="{{ path('app_sym_blog') }}"
+                          techno="Symfony 6.4.7, MySQL, Tailwind, Docker, Caddy, OVH"
+                          language="PHP, Twig, JavaScript, Makefile"
+                          class=""
         />
-        <twig:CardProject title="test"
-                          image="{{ asset('build/images/Kiconyellow.png') }}"
-                          url="test"
-                          description="test test test test test test test test test test test test test test test test test test "
-                          redirect="test"
-                          techno="test"
-                          class="klass"
+        <twig:CardProject title="Prodrafts"
+                          image="{{ asset('build/images/Prodraft thumbnail.png') }}"
+                          url="https://lolprodraft.com/"
+                          description="{{ 'app.project.description.prodraft'|trans }}"
+                          redirect="{{ path('app_prodraft') }}"
+                          techno="Next, Socket.io, Docker, Caddy, OVH"
+                          language="Typescript"
+                          class=""
         />
-        <twig:CardProject title="test"
-                          image="{{ asset('build/images/Kiconyellow.png') }}"
-                          url="test"
-                          description="test test test test test test test test test test test test test test test test test test "
-                          redirect="test"
-                          techno="test"
-                          class="klass"
+        <twig:CardProject title="Cooldowns v2"
+                          image="{{ asset('build/images/Cooldowns v2 thumbnail.png') }}"
+                          url="https://lolcooldowns.com/"
+                          description="{{ 'app.project.description.cooldownsv2'|trans }}"
+                          redirect="{{ path('app_cooldowns_v2') }}"
+                          techno="Symfony 7, SQLite, Bootstrap, Caddy, OVH"
+                          language="PHP, JavaScript, Twig"
+                          class=""
         />
-        <twig:CardProject title="test"
-                          image="{{ asset('build/images/Kiconyellow.png') }}"
-                          url="test"
-                          description="test test test test test test test test test test test test test test test test test test "
-                          redirect="test"
-                          techno="test"
-                          class="klass"
+        <twig:CardProject title="Cooldowns v1"
+                          image="{{ asset('build/images/Cooldowns  v1 thumbnail.png') }}"
+                          url="https://cooldowns.lol/"
+                          description="{{ 'app.project.description.cooldownsv1'|trans }}"
+                          redirect="{{ path('app_cooldowns_v1') }}"
+                          techno="Flask, Nginx, AWS"
+                          language="Python, HTML, CSS, JS"
+                          class=""
         />
     </div>
 </div>

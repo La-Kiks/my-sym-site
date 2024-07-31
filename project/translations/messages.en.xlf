@@ -201,6 +201,34 @@
         <source>app.register.success</source>
         <target>Registration successful !</target>
       </trans-unit>
+      <trans-unit id="Q3THRRY" resname="app.project.description.symblog">
+        <source>app.project.description.symblog</source>
+        <target>The site you are on was made with Symfony, where I tested and implemented many features of the framework.</target>
+      </trans-unit>
+      <trans-unit id="UJf5FsS" resname="app.project.description.prodraft">
+        <source>app.project.description.prodraft</source>
+        <target>A turn-based game that uses WebSockets to simulate a draft similar to the one found in the game League of Legends.</target>
+      </trans-unit>
+      <trans-unit id="6fQf.qd" resname="app.project.description.cooldownsv2">
+        <source>app.project.description.cooldownsv2</source>
+        <target>A second version of my site Cooldowns using Symfony 7, after having intensively followed the courses on Grafikart.</target>
+      </trans-unit>
+      <trans-unit id="w.81zpZ" resname="app.project.description.cooldownsv1">
+        <source>app.project.description.cooldownsv1</source>
+        <target>My very first website addresses a need for League of Legends players. It gained some popularity on Reddit at its launch, with 30k monthly users.</target>
+      </trans-unit>
+      <trans-unit id="MAChPgW" resname="app.project.title.symblog">
+        <source>app.project.title.symblog</source>
+        <target>This website / blog</target>
+      </trans-unit>
+      <trans-unit id="duAp_Tj" resname="app.home.kiki.description.part1">
+        <source>app.home.kiki.description.part1</source>
+        <target>Focused on back-end development using PHP and Symfony.</target>
+      </trans-unit>
+      <trans-unit id="A.D1yv5" resname="app.home.kiki.description.part2">
+        <source>app.home.kiki.description.part2</source>
+        <target>I have a passion for learning and improvement and am eager to take on new challenges !</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -201,6 +201,34 @@
         <source>app.register.success</source>
         <target>Enregistrement effectué avec succès !</target>
       </trans-unit>
+      <trans-unit id="Q3THRRY" resname="app.project.description.symblog">
+        <source>app.project.description.symblog</source>
+        <target>Le site sur  lequel vous êtes, fait avec Symfony où je me suis permis de tester et d'implémenter de nombreuses fonctionnalités du framework.</target>
+      </trans-unit>
+      <trans-unit id="UJf5FsS" resname="app.project.description.prodraft">
+        <source>app.project.description.prodraft</source>
+        <target>Un jeu tour par tour qui utilise les websockets pour simuler une draft comme l'on peut trouver dans le jeu League of Legends.</target>
+      </trans-unit>
+      <trans-unit id="6fQf.qd" resname="app.project.description.cooldownsv2">
+        <source>app.project.description.cooldownsv2</source>
+        <target>Une 2ème version de mon site cooldowns en utilisant Symfony 7, après avoir suivi intensivement les cours sur Grafikart.</target>
+      </trans-unit>
+      <trans-unit id="w.81zpZ" resname="app.project.description.cooldownsv1">
+        <source>app.project.description.cooldownsv1</source>
+        <target>Mon tout premier site qui répond à un besoin des joueurs de League of Legends. Le site a eu  une petite popularité sur  Reddit à son lancement avec 30k utilisateurs mensuels.</target>
+      </trans-unit>
+      <trans-unit id="MAChPgW" resname="app.project.title.symblog">
+        <source>app.project.title.symblog</source>
+        <target>Le site sur lequel vous êtes !</target>
+      </trans-unit>
+      <trans-unit id="duAp_Tj" resname="app.home.kiki.description.part1">
+        <source>app.home.kiki.description.part1</source>
+        <target>Focalisé sur le back-end avec PHP et Symfony.</target>
+      </trans-unit>
+      <trans-unit id="A.D1yv5" resname="app.home.kiki.description.part2">
+        <source>app.home.kiki.description.part2</source>
+        <target>J'ai soif de savoir et recherche de nouveaux défis !</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
