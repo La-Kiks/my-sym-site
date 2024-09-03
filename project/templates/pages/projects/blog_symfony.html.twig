@@ -3,8 +3,98 @@
 {% block title %}Symfony Website{% endblock %}
 
 {% block body %}
+    <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
 
+        <!-- Heading -->
+        <div class="container mb-4 col-span-2 sm:col-span-1  max-w-7xl flex-col p-2 text-left">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl lg:text-6xl">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">Symfony Website</span>
+            </h1>
+            <p class="text-lg font-normal text-left text-gray-500 lg:text-xl dark:text-gray-400">
+                {{ 'app.sym.subtitle'|trans }}
+            </p>
+        </div>
 
+        <!-- GRID : Context + Fonctions + Technos -->
+        <div class="mb-4 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 items-center lg:divide-x">
+            <div class="p-2 col-span-3" >
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.sym.context.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                    {{ 'app.sym.context.part1'|trans }}
+                    <br>
+                    {{ 'app.sym.context.part2'|trans }}
+                </p>
+            </div>
+            <div  class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.sym.functions.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- {{ 'app.sym.functions.one'|trans }}</li>
+                    <li>- {{ 'app.sym.functions.two'|trans }}</li>
+                </ul>
 
+                <h2 class="mt-2 mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.sym.techno.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- Symfony 6.4.7</li>
+                    <li>- MySQL</li>
+                    <li>- Tailwind</li>
+                    <li>- Docker + Caddy + OVH</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Visuels -->
+        <div class="mb-4 flex justify-center items-center">
+            <img    class="object-contain rounded-2xl w-100  md:max-w-3xl shadow-sm border"
+                    alt="An image of the website, showing a table."
+                    src="{{ asset('build/images/Symblog-visu.png') }}">
+        </div>
+
+        <!-- GRID : Conclu + URLS -->
+        <div class="mb-8 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 lg:divide-x">
+            <!-- Conclusions / Perspectives -->
+            <div class="p-2 col-span-3">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.sym.conclusion.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    {{ 'app.sym.conclusion.part1'|trans }}
+                    <br>
+                    {{ 'app.sym.conclusion.part2'|trans }}
+                </p>
+
+            </div>
+
+            <!-- Liens -->
+            <div class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.sym.links.title'|trans }}:
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-lg">
+                    <li><a class="text-blue-700"
+                           href="https://github.com/La-Kiks/oneblog" target="_blank">
+                            https://github.com/La-Kiks/oneblog</a></li>
+                    <li><a class="text-blue-700"
+                           href="https://kilian-au.fr" target="_blank">
+                            https://kilian-au.fr</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

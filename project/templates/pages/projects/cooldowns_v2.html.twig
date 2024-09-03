@@ -3,8 +3,99 @@
 {% block title %}Cooldowns V2{% endblock %}
 
 {% block body %}
+    <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
 
+        <!-- Heading -->
+        <div class="container mb-4 col-span-2 sm:col-span-1  max-w-7xl flex-col p-2 text-left">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl lg:text-6xl">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">Cooldowns v2</span>
+            </h1>
+            <p class="text-lg font-normal text-left text-gray-500 lg:text-xl dark:text-gray-400">
+                {{ 'app.cdv2.subtitle'|trans }}
+            </p>
+        </div>
 
+        <!-- GRID : Context + Fonctions + Technos -->
+        <div class="mb-4 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 items-center lg:divide-x">
+            <div class="p-2 col-span-3" >
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv2.context.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                    {{ 'app.cdv2.context.part1'|trans }}
+                    <br>
+                    {{ 'app.cdv2.context.part2'|trans }}
+                </p>
+            </div>
+            <div  class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv2.functions.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- {{ 'app.cdv2.functions.one'|trans }}</li>
+                    <li>- {{ 'app.cdv2.functions.two'|trans }}</li>
+                    <li>- {{ 'app.cdv2.functions.three'|trans }}</li>
+                </ul>
 
+                <h2 class="mt-2 mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv2.techno.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- Symfony 7</li>
+                    <li>- SQLite</li>
+                    <li>- Bootstrap</li>
+                    <li>- Docker + Caddy + OVH</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Visuels -->
+        <div class="mb-4 flex justify-center items-center">
+            <img    class="object-contain rounded-2xl w-100  md:max-w-3xl bg-red-600"
+                    alt="An image of the website, showing a table."
+                    src="{{ asset('build/images/CD-v2-visu-A.png') }}">
+        </div>
+
+        <!-- GRID : Conclu + URLS -->
+        <div class="mb-8 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 lg:divide-x">
+            <!-- Conclusions / Perspectives -->
+            <div class="p-2 col-span-3">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv2.conclusion.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    {{ 'app.cdv2.conclusion.part1'|trans }}
+                    <br>
+                    {{ 'app.cdv2.conclusion.part2'|trans }}
+                </p>
+
+            </div>
+
+            <!-- Liens -->
+            <div class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv2.links.title'|trans }}:
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-lg">
+                    <li><a class="text-blue-700"
+                           href="https://github.com/La-Kiks/lolcooldowns" target="_blank">
+                            https://github.com/La-Kiks/lolcooldowns</a></li>
+                    <li><a class="text-blue-700"
+                           href="https://lolcooldowns.com/" target="_blank">
+                            https://lolcooldowns.com/</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

@@ -229,6 +229,223 @@
         <source>app.home.kiki.description.part2</source>
         <target>I have a passion for learning and improvement and am eager to take on new challenges !</target>
       </trans-unit>
+      <trans-unit id="_ugriEA" resname="app.cdv1.context.title">
+        <source>app.cdv1.context.title</source>
+        <target>Context</target>
+      </trans-unit>
+      <trans-unit id="J2yuZBq" resname="app.cdv1.context.part1">
+        <source>app.cdv1.context.part1</source>
+        <target>
+        During my experience in esports on LoL, I identified the need to have access to champion cooldowns in the game to refine strategic choices.
+        I had created a Google Sheets version of a table, but it wasn’t practical to keep it updated, as I had to manually edit it every two weeks based on the patches.
+        </target>
+      </trans-unit>
+      <trans-unit id="1UmPpbO" resname="app.cdv1.context.part2">
+        <source>app.cdv1.context.part2</source>
+        <target>
+        To get started with coding and development, I naturally wanted to build a site that would be a dynamic table linked to the RIOT GAMES API to facilitate updates.
+        This site saw some success at its launch (through Reddit and Twitter) with around
+        </target>
+      </trans-unit>
+      <trans-unit id="WfZPMky" resname="app.cdv1.context.part3.underline">
+        <source>app.cdv1.context.part3.underline</source>
+        <target>30,000 monthly users.</target>
+      </trans-unit>
+      <trans-unit id="12stqgU" resname="app.cdv1.functions.title">
+        <source>app.cdv1.functions.title</source>
+        <target>Features</target>
+      </trans-unit>
+      <trans-unit id="lBfFHEX" resname="app.cdv1.functions.one">
+        <source>app.cdv1.functions.one</source>
+        <target>Game information through a table</target>
+      </trans-unit>
+      <trans-unit id="ecDkuoq" resname="app.cdv1.functions.two">
+        <source>app.cdv1.functions.two</source>
+        <target>Search and perform calculations</target>
+      </trans-unit>
+      <trans-unit id="gO_rJhd" resname="app.cdv1.functions.three">
+        <source>app.cdv1.functions.three</source>
+        <target>Bi-monthly updates via the Riot Games API</target>
+      </trans-unit>
+      <trans-unit id="dwWJOQv" resname="app.cdv1.techno.title">
+        <source>app.cdv1.techno.title</source>
+        <target>Technologies</target>
+      </trans-unit>
+      <trans-unit id="LetcXi4" resname="app.cdv1.conclusion.title">
+        <source>app.cdv1.conclusion.title</source>
+        <target>Conclusion</target>
+      </trans-unit>
+      <trans-unit id="42S5ECL" resname="app.cdv1.conclusion.part1">
+        <source>app.cdv1.conclusion.part1</source>
+        <target>Thanks to this project, I realized the difficulty of bringing an idea to life. But also, all that is possible to achieve, to learn, and the pride you feel when you succeed in making that idea a reality.</target>
+      </trans-unit>
+      <trans-unit id="oVAwsG2" resname="app.cdv1.conclusion.part2">
+        <source>app.cdv1.conclusion.part2</source>
+        <target>Starting with Python helped me since I had already worked with the language during my studies and my LoL career. The most challenging part was definitely setting up with AWS and EC2.</target>
+      </trans-unit>
+      <trans-unit id="kP7crK5" resname="app.cdv1.links.title">
+        <source>app.cdv1.links.title</source>
+        <target>Links</target>
+      </trans-unit>
+      <trans-unit id="wCRlee0" resname="app.cdv1.subtitle">
+        <source>app.cdv1.subtitle</source>
+        <target>
+        A website for League of Legends players that allows them to quickly find cooldown information, with automatic updates via API.
+        </target>
+      </trans-unit>
+      <trans-unit id="6VFr6RL" resname="app.prodraft.subtitle">
+        <source>app.prodraft.subtitle</source>
+        <target>A turn-based game that uses WebSockets to simulate a draft, similar to the one in League of Legends.</target>
+      </trans-unit>
+      <trans-unit id="5WArggY" resname="app.prodraft.context.title">
+        <source>app.prodraft.context.title</source>
+        <target>Context</target>
+      </trans-unit>
+      <trans-unit id="Eg6W.d9" resname="app.prodraft.context.part1">
+        <source>app.prodraft.context.part1</source>
+        <target>I didn’t invent the concept of prodraft, but I wanted to modernize and update it. It is useful for users participating in amateur tournaments.</target>
+      </trans-unit>
+      <trans-unit id="m2ma0kv" resname="app.prodraft.context.part2">
+        <source>app.prodraft.context.part2</source>
+        <target>I wanted to try creating a game to learn a new technology and a new programming language, starting from a universe I know well and avoiding making yet another tic-tac-toe or chess game.</target>
+      </trans-unit>
+      <trans-unit id="cJY0vg6" resname="app.prodraft.functions.title">
+        <source>app.prodraft.functions.title</source>
+        <target>Features</target>
+      </trans-unit>
+      <trans-unit id="9G7jQAR" resname="app.prodraft.functions.one">
+        <source>app.prodraft.functions.one</source>
+        <target>Draft simulation with animation and sound</target>
+      </trans-unit>
+      <trans-unit id="zKih0P3" resname="app.prodraft.functions.two">
+        <source>app.prodraft.functions.two</source>
+        <target>Different synchronized views</target>
+      </trans-unit>
+      <trans-unit id="LnxYcFC" resname="app.prodraft.functions.three">
+        <source>app.prodraft.functions.three</source>
+        <target>Draft result exportable in CSV</target>
+      </trans-unit>
+      <trans-unit id="qfrG4Cx" resname="app.prodraft.techno.title">
+        <source>app.prodraft.techno.title</source>
+        <target>Technologies</target>
+      </trans-unit>
+      <trans-unit id="HV.Nz3m" resname="app.prodraft.conclusion.title">
+        <source>app.prodraft.conclusion.title</source>
+        <target>Conclusions</target>
+      </trans-unit>
+      <trans-unit id="0G4iiaI" resname="app.prodraft.conclusion.part1">
+        <source>app.prodraft.conclusion.part1</source>
+        <target>More than just meeting a need, this site was a way for me to practice with TypeScript and WebSockets.</target>
+      </trans-unit>
+      <trans-unit id="Z8VhCW1" resname="app.prodraft.conclusion.part2">
+        <source>app.prodraft.conclusion.part2</source>
+        <target>I took a monorepo approach with three subfolders: common, backend, and frontend, using Next.js for the views. I struggled at first with the sockets in production, but with some effort, I managed to get it working as I wanted.</target>
+      </trans-unit>
+      <trans-unit id="uZOKb7R" resname="app.prodraft.links.title">
+        <source>app.prodraft.links.title</source>
+        <target>Links</target>
+      </trans-unit>
+      <trans-unit id="3CAl0kv" resname="app.sym.subtitle">
+        <source>app.sym.subtitle</source>
+        <target>My showcase site, which allows me to present my projects as well as test different features of the Symfony framework.</target>
+      </trans-unit>
+      <trans-unit id="5RhV0iz" resname="app.sym.context.title">
+        <source>app.sym.context.title</source>
+        <target>Context</target>
+      </trans-unit>
+      <trans-unit id="D_zZRzc" resname="app.sym.context.part1">
+        <source>app.sym.context.part1</source>
+        <target>In my quest to improve my PHP skills, I wanted to create this site, similar to a blog. The site is primarily intended to showcase my work as a developer but is also meant to evolve.</target>
+      </trans-unit>
+      <trans-unit id="B2BkLTy" resname="app.sym.context.part2">
+        <source>app.sym.context.part2</source>
+        <target>The goal is to become familiar with Symfony, so I’m testing as many backend features as possible, even if I don’t use them all.</target>
+      </trans-unit>
+      <trans-unit id="64ZDqnG" resname="app.sym.functions.title">
+        <source>app.sym.functions.title</source>
+        <target>Features</target>
+      </trans-unit>
+      <trans-unit id="aA8WRqt" resname="app.sym.functions.one">
+        <source>app.sym.functions.one</source>
+        <target>Blog, displaying articles</target>
+      </trans-unit>
+      <trans-unit id="k0JKVg6" resname="app.sym.functions.two">
+        <source>app.sym.functions.two</source>
+        <target>Sandbox for testing Symfony</target>
+      </trans-unit>
+      <trans-unit id="XGLZDhd" resname="app.sym.techno.title">
+        <source>app.sym.techno.title</source>
+        <target>Technologies</target>
+      </trans-unit>
+      <trans-unit id="g3hvapz" resname="app.sym.conclusion.title">
+        <source>app.sym.conclusion.title</source>
+        <target>Conclusions</target>
+      </trans-unit>
+      <trans-unit id="Fz0JNTF" resname="app.sym.conclusion.part1">
+        <source>app.sym.conclusion.part1</source>
+        <target>For this site, I immediately started by setting up Docker for everything, then created a Makefile to use Symfony and other services (phpMyAdmin, MySQL, MailHog).
+        I use Webpack Encore and Tailwind to streamline the frontend.</target>
+      </trans-unit>
+      <trans-unit id="PcxG7cg" resname="app.sym.conclusion.part2">
+        <source>app.sym.conclusion.part2</source>
+        <target>I have a long list of features that I’ve implemented and used; here are a few: pagination with KNP Paginator, DQL for custom queries, setup of tests to verify the functionality of display and pagination, account creation, login via Gmail and GitHub, setup of EasyAdmin...</target>
+      </trans-unit>
+      <trans-unit id="HGOu3Ka" resname="app.sym.links.title">
+        <source>app.sym.links.title</source>
+        <target>Links</target>
+      </trans-unit>
+      <trans-unit id="kVbwFJ5" resname="app.cdv2.subtitle">
+        <source>app.cdv2.subtitle</source>
+        <target>Redesign of the site for LoL players, with more features, improved stability, and responsive design.</target>
+      </trans-unit>
+      <trans-unit id="ow.1JFC" resname="app.cdv2.context.title">
+        <source>app.cdv2.context.title</source>
+        <target>Context</target>
+      </trans-unit>
+      <trans-unit id="ikDzS5C" resname="app.cdv2.context.part1">
+        <source>app.cdv2.context.part1</source>
+        <target>After progressing in my training (Grafikart), I wanted to redo my first project properly in order to familiarize myself with Symfony.</target>
+      </trans-unit>
+      <trans-unit id="ugjPgL7" resname="app.cdv2.context.part2">
+        <source>app.cdv2.context.part2</source>
+        <target>This new version incorporates most of the feedback I received on V1. It is easier to keep updated, more stable, and responsive.</target>
+      </trans-unit>
+      <trans-unit id="LFAgRg0" resname="app.cdv2.functions.title">
+        <source>app.cdv2.functions.title</source>
+        <target>Features</target>
+      </trans-unit>
+      <trans-unit id="gZiS9jw" resname="app.cdv2.functions.one">
+        <source>app.cdv2.functions.one</source>
+        <target>Game information through search</target>
+      </trans-unit>
+      <trans-unit id="4WZUlfq" resname="app.cdv2.functions.two">
+        <source>app.cdv2.functions.two</source>
+        <target>Display of multiple searches and calculations</target>
+      </trans-unit>
+      <trans-unit id="DYwGGER" resname="app.cdv2.functions.three">
+        <source>app.cdv2.functions.three</source>
+        <target>Responsive for phones and tablets</target>
+      </trans-unit>
+      <trans-unit id=".6PQjgN" resname="app.cdv2.techno.title">
+        <source>app.cdv2.techno.title</source>
+        <target>Technologies</target>
+      </trans-unit>
+      <trans-unit id="g8Dnouc" resname="app.cdv2.conclusion.title">
+        <source>app.cdv2.conclusion.title</source>
+        <target>Conclusions</target>
+      </trans-unit>
+      <trans-unit id="UAgISo7" resname="app.cdv2.conclusion.part1">
+        <source>app.cdv2.conclusion.part1</source>
+        <target>Satisfied to have put into practice what I’ve learned and to realize how far I’ve come.</target>
+      </trans-unit>
+      <trans-unit id="3M9jef6" resname="app.cdv2.conclusion.part2">
+        <source>app.cdv2.conclusion.part2</source>
+        <target>I was able to use Asset Mapper, Stimulus, and Mutation Observer to manage various aspects of the site, such as dual name + calculation search, dynamic addition of elements to the DOM, and autocomplete for search.</target>
+      </trans-unit>
+      <trans-unit id="Pc3hceO" resname="app.cdv2.links.title">
+        <source>app.cdv2.links.title</source>
+        <target>Links</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

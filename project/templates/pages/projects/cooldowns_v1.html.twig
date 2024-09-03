@@ -3,8 +3,101 @@
 {% block title %}Cooldowns V1{% endblock %}
 
 {% block body %}
+    <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
 
+        <!-- Heading -->
+        <div class="container mb-4 col-span-2 sm:col-span-1  max-w-7xl flex-col p-2 text-left">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl lg:text-6xl">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">Cooldowns v1</span>
+            </h1>
+            <p class="text-lg font-normal text-left text-gray-500 lg:text-xl dark:text-gray-400">
+                {{ 'app.cdv1.subtitle'|trans }}
+            </p>
+        </div>
 
+        <!-- GRID : Context + Fonctions + Technos -->
+        <div class="mb-4 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 items-center lg:divide-x">
+            <div class="p-2 col-span-3" >
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv1.context.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                    {{ 'app.cdv1.context.part1'|trans }}
+                    <br>
+                    {{ 'app.cdv1.context.part2'|trans }}
+                    <u>
+                        {{ 'app.cdv1.context.part3.underline'|trans }}
+                    </u>.
+                </p>
+            </div>
+            <div  class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv1.functions.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- {{ 'app.cdv1.functions.one'|trans }}</li>
+                    <li>- {{ 'app.cdv1.functions.two'|trans }}</li>
+                    <li>- {{ 'app.cdv1.functions.three'|trans }}</li>
+                </ul>
 
+                <h2 class="mt-2 mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv1.techno.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- Flask</li>
+                    <li>- Nginx</li>
+                    <li>- AWS</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Visuels -->
+        <div class="mb-4 flex justify-center items-center">
+            <img    class="object-contain rounded-2xl w-100  md:max-w-3xl bg-red-600"
+                    alt="An image of the website, showing a table."
+                    src="{{ asset('build/images/CD-v1-visu.png') }}">
+        </div>
+
+        <!-- GRID : Conclu + URLS -->
+        <div class="mb-8 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 lg:divide-x">
+            <!-- Conclusions / Perspectives -->
+            <div class="p-2 col-span-3">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv1.conclusion.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    {{ 'app.cdv1.conclusion.part1'|trans }}
+                    <br>
+                    {{ 'app.cdv1.conclusion.part2'|trans }}
+                </p>
+
+            </div>
+
+            <!-- Liens -->
+            <div class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.cdv1.links.title'|trans }}:
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-lg">
+                    <li><a class="text-blue-700"
+                           href="https://github.com/La-Kiks/cooldownsDotLol" target="_blank">
+                            https://github.com/La-Kiks/cooldownsDotLol</a></li>
+                    <li><a class="text-blue-700"
+                           href="https://cooldowns.lol/" target="_blank">
+                            https://cooldowns.lol/</a> <i class="text-xs">URL expire in November 2024</i> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

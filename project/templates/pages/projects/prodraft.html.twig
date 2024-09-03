@@ -3,8 +3,98 @@
 {% block title %}Prodraft{% endblock %}
 
 {% block body %}
+    <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
 
+        <!-- Heading -->
+        <div class="container mb-4 col-span-2 sm:col-span-1  max-w-7xl flex-col p-2 text-left">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl lg:text-6xl">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">Prodraft</span>
+            </h1>
+            <p class="text-lg font-normal text-left text-gray-500 lg:text-xl dark:text-gray-400">
+                {{ 'app.prodraft.subtitle'|trans }}
+            </p>
+        </div>
 
+        <!-- GRID : Context + Fonctions + Technos -->
+        <div class="mb-4 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 items-center lg:divide-x">
+            <div class="p-2 col-span-3" >
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.prodraft.context.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                    {{ 'app.prodraft.context.part1'|trans }}
+                    <br>
+                    {{ 'app.prodraft.context.part2'|trans }}
+                </p>
+            </div>
+            <div  class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.prodraft.functions.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- {{ 'app.prodraft.functions.one'|trans }}</li>
+                    <li>- {{ 'app.prodraft.functions.two'|trans }}</li>
+                    <li>- {{ 'app.prodraft.functions.three'|trans }}</li>
+                </ul>
 
+                <h2 class="mt-2 mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.prodraft.techno.title'|trans }} :
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    <li>- Next JS</li>
+                    <li>- Socket io</li>
+                    <li>- Docker + Caddy + OVH</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Visuels -->
+        <div class="mb-4 flex justify-center items-center">
+            <img    class="object-contain rounded-2xl w-100  md:max-w-3xl"
+                    alt="An image of the website, showing a table."
+                    src="{{ asset('build/images/Prodraft-visu.png') }}">
+        </div>
+
+        <!-- GRID : Conclu + URLS -->
+        <div class="mb-8 grid grid-cols-1 lg:grid-cols-5 lg:gap-4 lg:divide-x">
+            <!-- Conclusions / Perspectives -->
+            <div class="p-2 col-span-3">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.prodraft.conclusion.title'|trans }} :
+                    </u>
+                </h2>
+                <p class="font-normal text-left text-gray-700 text-lg dark:text-gray-400">
+                    {{ 'app.prodraft.conclusion.part1'|trans }}
+                    <br>
+                    {{ 'app.prodraft.conclusion.part2'|trans }}
+                </p>
+
+            </div>
+
+            <!-- Liens -->
+            <div class="p-2 col-span-2">
+                <h2 class="mb-1 text-xl font-mono text-gray-700 dark:text-white">
+                    <u>
+                        {{ 'app.prodraft.links.title'|trans }}:
+                    </u>
+                </h2>
+                <ul class="font-normal text-left text-lg">
+                    <li><a class="text-blue-700"
+                           href="https://github.com/La-Kiks/prodraft-lol" target="_blank">
+                            https://github.com/La-Kiks/prodraft-lol</a></li>
+                    <li><a class="text-blue-700"
+                           href="https://lolprodraft.com/" target="_blank">
+                            https://lolprodraft.com/</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
