@@ -3,49 +3,28 @@ services:
     image: mysql
     container_name: db_oneblog
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'lakiks'
+    ports:
+      - '3306:3306'
     volumes:
       - db-data:/var/lib/mysql
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     networks:
-      - dev
-
-  phpmyadmin:
-    image: phpmyadmin
-    container_name: phpmyadmin_oneblog
-    depends_on:
-      - db
-    ports:
-      - 8080:80
-    environment:
-      PMA_HOST: db
-    networks:
-      - dev
+      - prod
 
   www:
     build: docker
     container_name: www_oneblog
     ports:
-      - "8000:80"
+      - "4000:80"
     volumes:
       - ./docker/vhosts:/etc/apache2/sites-enabled
       - ./:/var/www
     networks:
-      - dev
-
-  mailhog:
-    image: mailhog/mailhog
-    container_name: mailhog
-    logging:
-      driver: 'none'
-    ports:
-      - 1025:1025 #SMTP
-      - 8025:8025 #Boite mail
-    networks:
-      - dev
+      - prod
 
 networks:
-  dev:
+  prod:
 
 volumes:
   db-data:

@@ -18,7 +18,15 @@ init: ## Init the project
 	$(MAKE) start
 	$(MAKE) composer-install
 	$(MAKE) npm-install
-	@$(call GREEN,"The application is available at: http://127.0.0.1:8000/.")
+	@$(call GREEN,"The application is available")
+
+prod: ## For production
+	$(MAKE) start
+	$(MAKE) composer-install-prod
+	$(MAKE) npm-install
+	$(MAKE) database-init
+	$(MAKE) npm-build
+	$(MAKE) cache-clear
 
 cache-clear: ## Clear cache
 	$(SYMFONY_CONSOLE) cache:clear
@@ -64,9 +72,9 @@ docker-start:
 	$(DOCKER_COMPOSE) up -d
 
 build: ## Build images and then start app
-	$(MAKE) docker-build
+	$(MAKE) docker-build 
 docker-build:
-	$(DOCKER_COMPOSE) up -d --build
+	$(DOCKER_COMPOSE) up -d --build --remove-orphans
 
 stop: ## Stop app
 	$(MAKE) docker-stop
@@ -77,6 +85,9 @@ docker-stop:
 ## —— 🎻 Composer ——
 composer-install: ## Install dependencies
 	$(COMPOSER) install
+
+composer-install-prod: ## Install dependencies
+	$(COMPOSER) install --no-dev --optimize-autoloader
 
 composer-update: ## Update dependencies
 	$(COMPOSER) update
@@ -95,31 +106,33 @@ npm-watch: ## Update all npm dependencies
 npm-dev: ## Equivalent to npm run dev
 	$(NPM) run dev
 
+npm-build: ## Equivalent to npm run dev
+	$(NPM) run build
+
 ## —— 📊 Database ——
 database-init: ## Init database
 	$(MAKE) database-drop
 	$(MAKE) database-create
 	$(MAKE) database-migration
 	$(MAKE) database-migrate
-	$(MAKE) database-fixtures-load
 
 database-drop: ## Create database
-	$(SYMFONY_CONSOLE) d:d:d --force --if-exists
+	$(SYMFONY_CONSOLE) doctrine:database:drop --force --if-exists
 
 database-create: ## Create database
-	$(SYMFONY_CONSOLE) d:d:c --if-not-exists
+	$(SYMFONY_CONSOLE) doctrine:database:create --if-not-exists
 
 database-remove: ## Drop database
 	$(SYMFONY_CONSOLE) d:d:d --force --if-exists
 
 database-migration: ## Make migration
-	$(SYMFONY_CONSOLE) make:migration
+	$(SYMFONY_CONSOLE) doctrine:migrations:generate
 
 migration: ## Alias : database-migration
 	$(MAKE) database-migration
 
 database-migrate: ## Migrate migrations
-	$(SYMFONY_CONSOLE) d:m:m --no-interaction
+	$(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction
 
 migrate: ## Alias : database-migrate
 	$(MAKE) database-migrate
