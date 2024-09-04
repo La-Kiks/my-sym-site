@@ -169,100 +169,100 @@
         </div>
 
         <!-- Send me a message -->
-        <div class="row-span-2 flex-col p-4 m-4 border border-gold-tips-400 rounded-2xl ">
-            <div class="mb-6 flex items-center justify-center">
-                <p class="text-center font-semibold ms-2 text-gray-700 dark:text-gray-300">
-                    {{ 'app.contact.send-a-mesage'|trans }}
-                </p>
-            </div>
-            <!-- Contact message form -->
-            <div class="mx-auto block max-w-md rounded-lg bg-white p-4 shadow-4 dark:bg-surface-dark min-w-[315px]">
-                {{ form_start(form) }}
-                    <!--Name input-->
-                    <div class="relative z-0 w-full mb-5 group" >
-                        <input
-                                type="text"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                id="name"
-                                placeholder=""
-                                name="{{ field_name(form.name) }}"
-                                value="{{ field_value(form.name) }}"
-                        />
-                        <label
-                                for="name"
-                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                        >{{ 'app.contact.name'|trans }}
-                        </label>
-                    </div>
-                    <!--Email input-->
-                    <div class="relative z-0 w-full mb-5 group" >
-                        <input
-                                type="email"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                id="email"
-                                placeholder=""
-                                name="{{ field_name(form.email) }}"
-                                value="{{ field_value(form.email) }}"
-                        />
-                        <label
-                                for="email"
-                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                        >{{ 'app.contact.email'|trans }}
-                        </label>
-                    </div>
-                    <!--Message textarea-->
-                    <div class="relative z-0 w-full mb-5 group" >
-                        <textarea
-                                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                  id="message"
-                                  rows="3"
-                                  placeholder=""
-                                  name="{{ field_name(form.message) }}"
-                                  value="{{ field_value(form.message) }}"
-                                  required
-                          ></textarea>
-                        <label
-                                for="message"
-                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                        >{{ 'app.contact.message'|trans }}
-                        </label>
-                    </div>
-                    <!--Checkbox-->
-                    <div
-                            class="mb-6 flex items-center">
-                        <input
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                type="checkbox"
-                                name="{{ field_name(form.copy) }}"
-                                value="{{ field_value(form.copy) }}"
-                                id="copy" />
-                        <label
-                                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                for="copy">
-                            {{ 'app.contact.get-a-copy-email'|trans }}
-                        </label>
-                    </div>
-                    <!-- Errors -->
-                    {% if not form.vars.valid %}
-                        <div class="alert alert-danger mb-6 bg-red-300 border-l-4 border-red-500 text-red-700 p-2 rounded-lg">
-                            <p class="text-lg font-semibold">{{ 'app.contact.errors'|trans }}</p>
-                            <p>{{ form_errors(form.name) }}</p>
-                            <p>{{ form_errors(form.email) }}</p>
-                            <p>{{ form_errors(form.content) }}</p>
-                            <p>{{ form_errors(form.copy) }}</p>
-                        </div>
-                    {% endif %}
+{#        <div class="row-span-2 flex-col p-4 m-4 border border-gold-tips-400 rounded-2xl ">#}
+{#            <div class="mb-6 flex items-center justify-center">#}
+{#                <p class="text-center font-semibold ms-2 text-gray-700 dark:text-gray-300">#}
+{#                    {{ 'app.contact.send-a-mesage'|trans }}#}
+{#                </p>#}
+{#            </div>#}
+{#            <!-- Contact message form -->#}
+{#            <div class="mx-auto block max-w-md rounded-lg bg-white p-4 shadow-4 dark:bg-surface-dark min-w-[315px]">#}
+{#                {{ form_start(form) }}#}
+{#                    <!--Name input-->#}
+{#                    <div class="relative z-0 w-full mb-5 group" >#}
+{#                        <input#}
+{#                                type="text"#}
+{#                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"#}
+{#                                id="name"#}
+{#                                placeholder=""#}
+{#                                name="{{ field_name(form.name) }}"#}
+{#                                value="{{ field_value(form.name) }}"#}
+{#                        />#}
+{#                        <label#}
+{#                                for="name"#}
+{#                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"#}
+{#                        >{{ 'app.contact.name'|trans }}#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <!--Email input-->#}
+{#                    <div class="relative z-0 w-full mb-5 group" >#}
+{#                        <input#}
+{#                                type="email"#}
+{#                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"#}
+{#                                id="email"#}
+{#                                placeholder=""#}
+{#                                name="{{ field_name(form.email) }}"#}
+{#                                value="{{ field_value(form.email) }}"#}
+{#                        />#}
+{#                        <label#}
+{#                                for="email"#}
+{#                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"#}
+{#                        >{{ 'app.contact.email'|trans }}#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <!--Message textarea-->#}
+{#                    <div class="relative z-0 w-full mb-5 group" >#}
+{#                        <textarea#}
+{#                                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"#}
+{#                                  id="message"#}
+{#                                  rows="3"#}
+{#                                  placeholder=""#}
+{#                                  name="{{ field_name(form.message) }}"#}
+{#                                  value="{{ field_value(form.message) }}"#}
+{#                                  required#}
+{#                          ></textarea>#}
+{#                        <label#}
+{#                                for="message"#}
+{#                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"#}
+{#                        >{{ 'app.contact.message'|trans }}#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <!--Checkbox-->#}
+{#                    <div#}
+{#                            class="mb-6 flex items-center">#}
+{#                        <input#}
+{#                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"#}
+{#                                type="checkbox"#}
+{#                                name="{{ field_name(form.copy) }}"#}
+{#                                value="{{ field_value(form.copy) }}"#}
+{#                                id="copy" />#}
+{#                        <label#}
+{#                                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"#}
+{#                                for="copy">#}
+{#                            {{ 'app.contact.get-a-copy-email'|trans }}#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <!-- Errors -->#}
+{#                    {% if not form.vars.valid %}#}
+{#                        <div class="alert alert-danger mb-6 bg-red-300 border-l-4 border-red-500 text-red-700 p-2 rounded-lg">#}
+{#                            <p class="text-lg font-semibold">{{ 'app.contact.errors'|trans }}</p>#}
+{#                            <p>{{ form_errors(form.name) }}</p>#}
+{#                            <p>{{ form_errors(form.email) }}</p>#}
+{#                            <p>{{ form_errors(form.content) }}</p>#}
+{#                            <p>{{ form_errors(form.copy) }}</p>#}
+{#                        </div>#}
+{#                    {% endif %}#}
 
-                    <!--Submit button-->
-                    <button
-                            type="submit"
-                            class="my-3 flex bg-blue-600 w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-500 hover:shadow-neutral-2  active:bg-neutral-600 active:shadow-neutral-700 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
-                        {{ 'app.contact.send-mail'|trans }}
-                    </button>
-                    {{ form_rest(form) }}
-                    {{ form_end(form) }}
-            </div>
-        </div>
+{#                    <!--Submit button-->#}
+{#                    <button#}
+{#                            type="submit"#}
+{#                            class="my-3 flex bg-blue-600 w-full items-center justify-center rounded px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-500 hover:shadow-neutral-2  active:bg-neutral-600 active:shadow-neutral-700 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">#}
+{#                        {{ 'app.contact.send-mail'|trans }}#}
+{#                    </button>#}
+{#                    {{ form_rest(form) }}#}
+{#                    {{ form_end(form) }}#}
+{#            </div>#}
+{#        </div>#}
 
     </div>
 
