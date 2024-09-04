@@ -1,0 +1,30 @@
+services:
+  db:
+    image: mysql
+    container_name: db_oneblog
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'lakiks'
+    ports:
+      - '3306:3306'
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - prod
+
+  www:
+    build: docker
+    container_name: www_oneblog
+    ports:
+      - "4000:80"
+    volumes:
+      - ./docker/vhosts:/etc/apache2/sites-enabled
+      - ./:/var/www
+    networks:
+      - prod
+
+networks:
+  prod:
+
+volumes:
+  db-data:
