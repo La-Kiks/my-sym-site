@@ -7,7 +7,7 @@ use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Security\UserAuthenticator;
 use App\Service\JWTService;
-//use App\Service\SendEmailService;
+use App\Service\SendEmailService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +26,7 @@ class RegistrationController extends AbstractController
         UserAuthenticator $authenticator,
         EntityManagerInterface $entityManager,
         JWTService $jwt,
-//        SendEmailService $mail
+        SendEmailService $mail
     ): Response
     {
         $user = new User();
@@ -63,15 +63,15 @@ class RegistrationController extends AbstractController
             $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
 
             // Envoyer l'e-mail
-//            $mail->send(
-//                'no-reply@openblog.test',
-//                $user->getEmail(),
-//                'Activation de votre compte sur Kilian-au',
-//                'register',
-//                compact('user', 'token') // ['user' => $user, 'token'=>$token]
-//            );
-//
-//            $this->addFlash('success', 'Utilisateur inscrit, un e-mail a été envoyé.  ');
+            $mail->send(
+                'no-reply@openblog.test',
+                $user->getEmail(),
+                'Activation de votre compte sur Kilian-au',
+                'register',
+                compact('user', 'token') // ['user' => $user, 'token'=>$token]
+            );
+
+            $this->addFlash('success', 'Utilisateur inscrit, un e-mail a été envoyé.  ');
 
             return $userAuthenticator->authenticateUser(
                 $user,

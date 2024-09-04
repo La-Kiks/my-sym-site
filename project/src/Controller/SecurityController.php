@@ -6,7 +6,7 @@ use App\Form\ResetPasswordFormType;
 use App\Form\ResetPasswordRequestFormType;
 use App\Repository\UserRepository;
 use App\Service\JWTService;
-//use App\Service\SendEmailService;
+use App\Service\SendEmailService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,7 +47,7 @@ class SecurityController extends AbstractController
         Request $request,
         UserRepository $userRepository,
         JWTService $jwt,
-//        SendEmailService $mail
+        SendEmailService $mail
     ): Response
     {
         $form = $this->createForm(ResetPasswordRequestFormType::class);
@@ -74,15 +74,15 @@ class SecurityController extends AbstractController
                 $url = $this->generateUrl('reset_password', ['token' => $token],
                     UrlGeneratorInterface::ABSOLUTE_URL);
 
-//                $mail->send(
-//                    'no-reply@kilian-au.fr',
-//                    $user->getEmail(),
-//                    'Réinitialisation de mot de passe',
-//                    'password_reset',
-//                    compact('user', 'url') // ['user' => $user, 'url'=>$url]
-//                );
-//
-//                $this->addFlash('success', 'Email envoyé.');
+                $mail->send(
+                    'no-reply@kilian-au.fr',
+                    $user->getEmail(),
+                    'Réinitialisation de mot de passe',
+                    'password_reset',
+                    compact('user', 'url') // ['user' => $user, 'url'=>$url]
+                );
+
+                $this->addFlash('success', 'Email envoyé.');
                 return $this->redirectToRoute('app_login');
 
             }
