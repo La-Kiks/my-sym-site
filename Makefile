@@ -14,11 +14,14 @@ GREEN = /bin/echo -e "\x1b[32m\#\# $1\x1b[0m"
 RED = /bin/echo -e "\x1b[31m\#\# $1\x1b[0m"
 
 ## —— 🔥 App ——
-init: ## Init the project
-	$(MAKE) start
+init: ## Init the project for dev
+	$(MAKE) start-dev
 	$(MAKE) composer-install
 	$(MAKE) npm-install
-	@$(call GREEN,"The application is available")
+	$(MAKE) database-init
+	$(MAKE) database-fixtures-load
+	@$(call GREEN,"The application is available for dev http://127.0.0.1:8000/")
+	$(MAKE) npm-watch
 
 prod: ## For production
 	$(MAKE) start
@@ -27,6 +30,7 @@ prod: ## For production
 	$(MAKE) database-init
 	$(MAKE) npm-build
 	$(MAKE) cache-clear
+	@$(call GREEN,"Production ready !")
 
 cache-clear: ## Clear cache
 	$(SYMFONY_CONSOLE) cache:clear
@@ -47,10 +51,10 @@ tests: ## Run all tests
 	$(PHP) bin/phpunit --testdox tests/E2E/
 
 database-init-test: ## Init database for test
-	$(SYMFONY_CONSOLE) d:d:d --force --if-exists --env=test
-	$(SYMFONY_CONSOLE) d:d:c --env=test
-	$(SYMFONY_CONSOLE) d:m:m --no-interaction --env=test
-	$(SYMFONY_CONSOLE) d:f:l --no-interaction --env=test
+	$(SYMFONY_CONSOLE) doctrine:database:drop --force --if-exists --env=test
+	$(SYMFONY_CONSOLE) doctrine:database:create --env=test
+	$(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction --env=test
+	$(SYMFONY_CONSOLE) doctrine:fixtures:load --no-interaction --env=test
 
 unit-test: ## Run unit tests
 	$(MAKE) database-init-test
@@ -68,6 +72,8 @@ e2e-test: ## Run E2E tests
 ## —— 🐳 Docker ——
 start: ## Start app
 	$(MAKE) docker-start
+start-dev: ## Start app dev
+	$(DOCKER_COMPOSE) -f docker-compose-dev.yml up -d
 docker-start:
 	$(DOCKER_COMPOSE) up -d
 
@@ -80,6 +86,9 @@ stop: ## Stop app
 	$(MAKE) docker-stop
 docker-stop:
 	$(DOCKER_COMPOSE) stop
+	@$(call RED,"The containers are now stopped.")
+stop-dev:
+	$(DOCKER_COMPOSE) -f docker-compose-dev.yml stop
 	@$(call RED,"The containers are now stopped.")
 
 ## —— 🎻 Composer ——
@@ -125,8 +134,8 @@ database-create: ## Create database
 database-remove: ## Drop database
 	$(SYMFONY_CONSOLE) d:d:d --force --if-exists
 
-database-migration: ## Make migration
-	$(SYMFONY_CONSOLE) doctrine:migrations:generate
+database-migration: ## Make migration doctrine:migrations:generate ?
+	$(SYMFONY_CONSOLE) make:migration
 
 migration: ## Alias : database-migration
 	$(MAKE) database-migration
@@ -138,7 +147,7 @@ migrate: ## Alias : database-migrate
 	$(MAKE) database-migrate
 
 database-fixtures-load: ## Load fixtures
-	$(SYMFONY_CONSOLE) d:f:l --no-interaction
+	$(SYMFONY_CONSOLE) doctrine:fixtures:load --no-interaction
 
 fixtures: ## Alias : database-fixtures-load
 	$(MAKE) database-fixtures-load
