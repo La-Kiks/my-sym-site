@@ -18,7 +18,7 @@ init: ## Init the project for dev
 	$(MAKE) start-dev
 	$(MAKE) composer-install
 	$(MAKE) npm-install
-	$(MAKE) database-init
+	$(MAKE) database-init-dev
 	$(MAKE) database-fixtures-load
 	@$(call GREEN,"The application is available for dev http://127.0.0.1:8000/")
 	$(MAKE) npm-watch
@@ -27,7 +27,7 @@ prod: ## For production
 	$(MAKE) start
 	$(MAKE) composer-install-prod
 	$(MAKE) npm-install
-	$(MAKE) database-init
+	$(MAKE) database-init-prod
 	$(MAKE) npm-build
 	$(MAKE) cache-clear
 	@$(call GREEN,"Production ready !")
@@ -119,10 +119,16 @@ npm-build: ## Equivalent to npm run dev
 	$(NPM) run build
 
 ## —— 📊 Database ——
-database-init: ## Init database
+database-init-dev: ## Init database
 	$(MAKE) database-drop
 	$(MAKE) database-create
 	$(MAKE) database-migration
+	$(MAKE) database-migrate
+
+database-init-prod: ## Init database
+	$(MAKE) database-drop
+	$(MAKE) database-create
+	$(MAKE) database-migration-diff
 	$(MAKE) database-migrate
 
 database-drop: ## Create database
@@ -136,6 +142,9 @@ database-remove: ## Drop database
 
 database-migration: ## Make migration doctrine:migrations:generate ?
 	$(SYMFONY_CONSOLE) make:migration
+
+database-migration-diff: ## Make migration doctrine:migrations:generate ?
+	$(SYMFONY_CONSOLE) doctrine:migrations:diff
 
 migration: ## Alias : database-migration
 	$(MAKE) database-migration
