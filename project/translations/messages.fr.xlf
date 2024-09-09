@@ -451,6 +451,163 @@
         <source>app.cdv2.links.title</source>
         <target>Liens</target>
       </trans-unit>
+      <trans-unit id="q21FGdc" resname="app.about.intro.part1">
+        <source>app.about.intro.part1</source>
+        <target>
+        Je m'appelle Kilian, un développeur web passionné, avec un fort accent sur les technologies backend.
+        Au cours de l'année écoulée, je me suis spécialisé dans la création d'applications web dynamiques en utilisant des frameworks modernes tels que Symfony et Next.js.
+        </target>
+      </trans-unit>
+      <trans-unit id="1_sYbJ8" resname="app.about.intro.part2">
+        <source>app.about.intro.part2</source>
+        <target>
+        Mon parcours dans le développement a commencé avec Python et s'est élargi pour inclure une expertise plus vaste, comprenant l'intégration d'API, les applications web en temps réel, et le développement full-stack.
+        J'aime résoudre des problèmes complexes grâce au code et améliorer continuellement mes compétences.
+        </target>
+      </trans-unit>
+      <trans-unit id="95ZwfQe" resname="app.about.intro.part3">
+        <source>app.about.intro.part3</source>
+        <target>
+        Avant ma carrière dans le développement web, j'ai travaillé en tant qu'entraîneur esports freelance de 2018 à 2023, principalement sur le jeu "League of Legends."
+        J'ai supervisé des joueurs et des équipes pour plusieurs organisations renommées, y compris TPAA (Tony Parker Adequat Academy), LDLC, OL (Olympique Lyonnais) et Solary.
+        </target>
+      </trans-unit>
+      <trans-unit id="ih1PyzZ" resname="app.about.intro.part4">
+        <source>app.about.intro.part4</source>
+        <target>
+        Mes efforts en tant qu'entraîneur ont abouti à des succès notables, notamment en 2022 lorsque mon équipe a remporté deux fois le titre français (LFL) et a décroché une deuxième place au tournoi européen (EMEA).
+        </target>
+      </trans-unit>
+      <trans-unit id="Lxuzb7r" resname="app.about.skills.title">
+        <source>app.about.skills.title</source>
+        <target>Compétences et expertises</target>
+      </trans-unit>
+      <trans-unit id="g961yNn" resname="app.about.skills.intro">
+        <source>app.about.skills.intro</source>
+        <target>J'ai développé une large gamme de compétences en développement web. Mon expertise technique inclut :</target>
+      </trans-unit>
+      <trans-unit id="GmmHLw0" resname="app.about.skills.lang">
+        <source>app.about.skills.lang</source>
+        <target>Langages</target>
+      </trans-unit>
+      <trans-unit id="qnMhKDe" resname="app.about.skills.dbmngnt">
+        <source>app.about.skills.dbmngnt</source>
+        <target>Bases de données</target>
+      </trans-unit>
+      <trans-unit id="VBGpeyb" resname="app.about.skills.tools">
+        <source>app.about.skills.tools</source>
+        <target>Outils et plateformes</target>
+      </trans-unit>
+      <trans-unit id="GDadkZJ" resname="app.about.skills.tests">
+        <source>app.about.skills.tests</source>
+        <target>Tests et debugs</target>
+      </trans-unit>
+      <trans-unit id="Pvdl4wN" resname="app.about.skills.tests.list">
+        <source>app.about.skills.tests.list</source>
+        <target>PHPUnit, tests fonctionnels, outils de débogage</target>
+      </trans-unit>
+      <trans-unit id="Llgp_bX" resname="app.about.skills.skills.others">
+        <source>app.about.skills.skills.others</source>
+        <target>Autres</target>
+      </trans-unit>
+      <trans-unit id="8MtQypS" resname="app.about.skills.skills.others.list">
+        <source>app.about.skills.skills.others.list</source>
+        <target>Design responsive, gestion des données en temps réel, authentification des utilisateurs (Oauth)</target>
+      </trans-unit>
+      <trans-unit id="45rFPqw" resname="app.about.skills.skills.soft">
+        <source>app.about.skills.skills.soft</source>
+        <target>Soft skills</target>
+      </trans-unit>
+      <trans-unit id="Ekl2DlL" resname="app.about.skills.skills.soft.list">
+        <source>app.about.skills.skills.soft.list</source>
+        <target>Résolution de problèmes, adaptabilité, collaboration, patience</target>
+      </trans-unit>
+      <trans-unit id="nvbZvl1" resname="app.about.achievements.title">
+        <source>app.about.achievements.title</source>
+        <target>Projets clés</target>
+      </trans-unit>
+      <trans-unit id="SM.roxR" resname="app.about.achievements.intro">
+        <source>app.about.achievements.intro</source>
+        <target>
+        Au cours des dernières années, j'ai réalisé d'importants accomplissements dans mes projets et mon développement professionnel :
+        </target>
+      </trans-unit>
+      <trans-unit id="JyYjcaB" resname="app.about.achievements.cdr">
+        <source>app.about.achievements.cdr</source>
+        <target>League of Legends Cooldown Tracker</target>
+      </trans-unit>
+      <trans-unit id="DHluJC9" resname="app.about.achievements.cdr.text">
+        <source>app.about.achievements.cdr.text</source>
+        <target>Lancement réussi d'un site qui a attiré plus de 30 000 utilisateurs mensuels, fournissant des données de jeu en temps réel pour aider à la prise de décisions stratégiques.</target>
+      </trans-unit>
+      <trans-unit id="EXAhwvV" resname="app.about.achievements.draft">
+        <source>app.about.achievements.draft</source>
+        <target>Outil de simulation de draft</target>
+      </trans-unit>
+      <trans-unit id="4.TIn5w" resname="app.about.achievements.draft.text">
+        <source>app.about.achievements.draft.text</source>
+        <target>Développement d'un outil de draft en temps réel pour les tournois eSports amateurs, agréable visuellement et simple d'accès pour la communauté de jeu compétitive.</target>
+      </trans-unit>
+      <trans-unit id="W_xflKB" resname="app.about.achievements.blog">
+        <source>app.about.achievements.blog</source>
+        <target>Portfolio personnel et blog</target>
+      </trans-unit>
+      <trans-unit id="yaS1T1T" resname="app.about.achievements.blog.text">
+        <source>app.about.achievements.blog.text</source>
+        <target>Création d'un site personnel pour présenter mon portfolio et approfondir mes connaissances en Symfony. Ce site sert également de plateforme pour mon blog, où je partage mes idées et documente mon parcours de développement.</target>
+      </trans-unit>
+      <trans-unit id="q2WV78J" resname="app.about.achievements.tech">
+        <source>app.about.achievements.tech</source>
+        <target>Développement technique</target>
+      </trans-unit>
+      <trans-unit id="7gr7BU9" resname="app.about.achievements.tech.text">
+        <source>app.about.achievements.tech.text</source>
+        <target>À travers divers projets, j'ai considérablement amélioré ma compréhension de Docker, AWS, Symfony et du développement full-stack, tout en renforçant ma capacité à intégrer des API complexes et à gérer des données en temps réel avec WebSockets.</target>
+      </trans-unit>
+      <trans-unit id="uK9aNYP" resname="app.about.goals.title">
+        <source>app.about.goals.title</source>
+        <target>Objectifs et ambitions</target>
+      </trans-unit>
+      <trans-unit id="pfCyCxv" resname="app.about.goals.intro">
+        <source>app.about.goals.intro</source>
+        <target>Dans le futur je souhaite continuer à évoluer en tant que développeur full-stack et repousser les limites de mon expertise technique :</target>
+      </trans-unit>
+      <trans-unit id="Sz6zZeI" resname="app.about.goals.one">
+        <source>app.about.goals.one</source>
+        <target>Élargir mes connaissances en IA et en apprentissage automatique</target>
+      </trans-unit>
+      <trans-unit id="XKGVpk3" resname="app.about.goals.one.text">
+        <source>app.about.goals.one.text</source>
+        <target>Je m'intéresse à l'exploration des technologies d'intelligence artificielle et d'apprentissage automatique, en particulier comment elles peuvent s'intégrer aux cadres web existants pour améliorer l'expérience utilisateur et les fonctionnalités.</target>
+      </trans-unit>
+      <trans-unit id="OL5v.G1" resname="app.about.goals.two">
+        <source>app.about.goals.two</source>
+        <target>Contribuer aux projets open-source</target>
+      </trans-unit>
+      <trans-unit id="O0uAUu3" resname="app.about.goals.two.text">
+        <source>app.about.goals.two.text</source>
+        <target>'ai l'intention de contribuer davantage aux projets open-source, en particulier dans les domaines des applications web en temps réel, des outils de développement de jeux et des frameworks backend.</target>
+      </trans-unit>
+      <trans-unit id="YYgRSnc" resname="app.about.goals.three">
+        <source>app.about.goals.three</source>
+        <target>Solutions cloud avancées</target>
+      </trans-unit>
+      <trans-unit id="bHViHPd" resname="app.about.goals.three.text">
+        <source>app.about.goals.three.text</source>
+        <target>Je souhaite approfondir ma compréhension de l'informatique dans le cloud, en me concentrant particulièrement sur les solutions évolutives dans AWS, l'orchestration Docker (Kubernetes) et les pipelines CI/CD.</target>
+      </trans-unit>
+      <trans-unit id="OIReEKn" resname="app.about.goals.four">
+        <source>app.about.goals.four</source>
+        <target>Explorer le développement de jeux</target>
+      </trans-unit>
+      <trans-unit id="DTWqplI" resname="app.about.goals.four.text">
+        <source>app.about.goals.four.text</source>
+        <target>En m'appuyant sur mon outil de simulation de draft, je veux explorer davantage le développement de jeux en commençant par des projets plus petits liés à l'eSport et aux jeux de stratégie.</target>
+      </trans-unit>
+      <trans-unit id="fnMDew6" resname="app.about.goals.outro">
+        <source>app.about.goals.outro</source>
+        <target>Je suis enthousiaste à l'idée d'appliquer mes compétences et d'en développer de nouvelles en relevant des défis plus complexes dans le développement web ou logiciel.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

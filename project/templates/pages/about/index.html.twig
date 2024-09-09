@@ -3,8 +3,92 @@
 {% block title %}About me{% endblock %}
 
 {% block body %}
+    <div class="container m-auto  max-w-screen-xl justify-center align-items-center p-2">
+
+        <!-- Intro  -->
+        <h1 class="mb-4 md:mt-8 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl ">
+            <span class="p-0.5 bg-gold-tips-300 rounded-lg">Introduction</span>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-4">
+            <p class="col mb-2 md:mb-4 p-2 text-lg font-normal text-left text-gray-600 dark:text-gray-400">
+                {{ 'app.about.intro.part1'|trans }}
+                <br class="md:mb-4">
+                {{ 'app.about.intro.part2'|trans }}
+            </p>
+            <p class="col md:border-l mb-4 p-2 md:pl-4 text-lg font-normal text-left text-gray-600 dark:text-gray-400">
+                {{ 'app.about.intro.part3'|trans }}
+                <br class="md:mb-4">
+                {{ 'app.about.intro.part4'|trans }}
+            </p>
+        </div>
+
+        <!-- Visuel -->
+        <div class="mb-4 md:mb-12 flex justify-center items-center">
+            <img    class="object-contain rounded-2xl w-100  md:max-w-5xl lg:max-w-7xl shadow-sm border"
+                    alt="A bald guy with a headset."
+                    src="{{ asset('build/images/Paris-Stage-Wide.jpg') }}">
+        </div>
+
+        <!-- Skills & Expertises  -->
+        <div class="mb-4 md:mb-12">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl ">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">{{ 'app.about.skills.title'|trans }}</span>
+            </h1>
+            <p class="mb-2 text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                {{ 'app.about.skills.intro'|trans }}
+             </p>
+
+            <ul class="mb-4 md:pl-4 text-lg font-normal text-left text-gray-600 dark:text-gray-400">
+                <li><b>- {{ 'app.about.skills.lang'|trans }} :</b> PHP, Python, Typescript, JavaScript, HTML, CSS</li>
+                <li><b>- Frameworks :</b> Symfony, Next.js, Tailwind CSS</li>
+                <li><b>- APIs :</b> Riot Games API, RESTful APis, Websockets</li>
+                <li><b>- {{ 'app.about.skills.dbmngnt'|trans }} :</b> MySQL, SQLite</li>
+                <li><b>- {{ 'app.about.skills.tools'|trans }} :</b> Docker, AWS (EC2), Git, OVH</li>
+                <li><b>- {{ 'app.about.skills.tests'|trans }} :</b> {{ 'app.about.skills.tests.list'|trans }}</li>
+                <li><b>- {{ 'app.about.skills.skills.others'|trans }} :</b> {{ 'app.about.skills.skills.others.list'|trans }} </li>
+                <li><b>- {{ 'app.about.skills.skills.soft'|trans }} :</b> {{ 'app.about.skills.skills.soft.list'|trans }} </li>
+            </ul>
+        </div>
+
+        <!-- Achievements and Milestones  -->
+        <div class="mb-4 md:mb-12">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl ">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">{{ 'app.about.achievements.title'|trans }}</span>
+            </h1>
+            <p class="mb-2 text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                {{ 'app.about.achievements.intro'|trans }}
+            </p>
+
+            <ul class="mb-4 md:pl-4 text-lg font-normal text-left text-gray-600 dark:text-gray-400">
+                <li><b>- {{ 'app.about.achievements.cdr'|trans }} :</b> {{ 'app.about.achievements.cdr.text'|trans }}</li>
+                <li><b>- {{ 'app.about.achievements.draft'|trans }} :</b> {{ 'app.about.achievements.draft.text'|trans }}</li>
+                <li><b>- {{ 'app.about.achievements.blog'|trans }} :</b> {{ 'app.about.achievements.blog.text'|trans }} </li>
+                <li><b>- {{ 'app.about.achievements.tech'|trans }} :</b> {{ 'app.about.achievements.tech.text'|trans }} </li>
+            </ul>
+        </div>
+
+        <!-- Future Goals and Ambitions  -->
+        <div class="mb-4 md:mb-12">
+            <h1 class="mb-4 mx-auto text-3xl font-mono font-bold text-gray-700 dark:text-white md:text-5xl ">
+                <span class="p-0.5 bg-gold-tips-300 rounded-lg">{{ 'app.about.goals.title'|trans }}</span>
+            </h1>
+            <p class="mb-2 text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                {{ 'app.about.goals.intro'|trans }}
+            </p>
+
+            <ul class="mb-4 md:pl-4 text-lg font-normal text-left text-gray-600 dark:text-gray-400">
+                <li><b>- {{ 'app.about.goals.one'|trans }} :</b> {{ 'app.about.goals.one.text'|trans }} :</li>
+                <li><b>- {{ 'app.about.goals.two'|trans }} :</b> {{ 'app.about.goals.two.text'|trans }}</li>
+                <li><b>- {{ 'app.about.goals.three'|trans }} :</b> {{ 'app.about.goals.three.text'|trans }} </li>
+                <li><b>- {{ 'app.about.goals.four'|trans }} :</b> {{ 'app.about.goals.four.text'|trans }} </li>
+            </ul>
+
+            <p class="mb-2 text-lg font-normal text-left text-gray-700 dark:text-gray-400">
+                {{ 'app.about.goals.outro'|trans }}
+            </p>
+        </div>
 
 
-
-
+    </div>
+    <!-- End of container  -->
 {% endblock %}

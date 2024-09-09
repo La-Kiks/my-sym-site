@@ -446,6 +446,159 @@
         <source>app.cdv2.links.title</source>
         <target>Links</target>
       </trans-unit>
+      <trans-unit id="q21FGdc" resname="app.about.intro.part1">
+        <source>app.about.intro.part1</source>
+        <target>
+        I'm Kilian, a passionate web developer with a strong focus on backend technologies.
+        Over the last year, I’ve specialized in creating dynamic web applications using modern frameworks such as Symfony and Next.js.
+        </target>
+      </trans-unit>
+      <trans-unit id="1_sYbJ8" resname="app.about.intro.part2">
+        <source>app.about.intro.part2</source>
+        <target>
+        My journey in development began with Python and has evolved into a broader expertise that includes API integration, real-time web applications, and full-stack development.
+        I enjoy solving complex problems through code and continuously improving my skills.
+        </target>
+      </trans-unit>
+      <trans-unit id="95ZwfQe" resname="app.about.intro.part3">
+        <source>app.about.intro.part3</source>
+        <target>
+        Prior to my web development career, I worked as a freelance esports coach from 2018 to 2023, primarily focusing on the game "League of Legends."
+        I supervised players and teams for several renowned organizations, including TPAA (Tony Parker Adequat Academy), LDLC, OL (Olympique Lyonnais), and Solary.
+        </target>
+      </trans-unit>
+      <trans-unit id="ih1PyzZ" resname="app.about.intro.part4">
+        <source>app.about.intro.part4</source>
+        <target>My coaching efforts yielded notable success, particularly in 2022 when my team clinched the French title (LFL) twice and secured a second-place finish at the European Tournament (EMEA).</target>
+      </trans-unit>
+      <trans-unit id="Lxuzb7r" resname="app.about.skills.title">
+        <source>app.about.skills.title</source>
+        <target>Skills and expertise</target>
+      </trans-unit>
+      <trans-unit id="g961yNn" resname="app.about.skills.intro">
+        <source>app.about.skills.intro</source>
+        <target>I have developed a broad range of skills in web development. My technical expertise includes:</target>
+      </trans-unit>
+      <trans-unit id="GmmHLw0" resname="app.about.skills.lang">
+        <source>app.about.skills.lang</source>
+        <target>Languages</target>
+      </trans-unit>
+      <trans-unit id="qnMhKDe" resname="app.about.skills.dbmngnt">
+        <source>app.about.skills.dbmngnt</source>
+        <target>Database management</target>
+      </trans-unit>
+      <trans-unit id="VBGpeyb" resname="app.about.skills.tools">
+        <source>app.about.skills.tools</source>
+        <target>Tools and platforms</target>
+      </trans-unit>
+      <trans-unit id="GDadkZJ" resname="app.about.skills.tests">
+        <source>app.about.skills.tests</source>
+        <target>Testing and debugging</target>
+      </trans-unit>
+      <trans-unit id="Pvdl4wN" resname="app.about.skills.tests.list">
+        <source>app.about.skills.tests.list</source>
+        <target>PHPUnit, functional testing, debugging tools</target>
+      </trans-unit>
+      <trans-unit id="Llgp_bX" resname="app.about.skills.skills.others">
+        <source>app.about.skills.skills.others</source>
+        <target>Other skills</target>
+      </trans-unit>
+      <trans-unit id="8MtQypS" resname="app.about.skills.skills.others.list">
+        <source>app.about.skills.skills.others.list</source>
+        <target>Responsive design, real-time data handling, user authentication (Oauth)</target>
+      </trans-unit>
+      <trans-unit id="45rFPqw" resname="app.about.skills.skills.soft">
+        <source>app.about.skills.skills.soft</source>
+        <target>Soft skills</target>
+      </trans-unit>
+      <trans-unit id="Ekl2DlL" resname="app.about.skills.skills.soft.list">
+        <source>app.about.skills.skills.soft.list</source>
+        <target>Problem-solving, adaptability, collaboration, patience</target>
+      </trans-unit>
+      <trans-unit id="nvbZvl1" resname="app.about.achievements.title">
+        <source>app.about.achievements.title</source>
+        <target>Achievements and milestones</target>
+      </trans-unit>
+      <trans-unit id="SM.roxR" resname="app.about.achievements.intro">
+        <source>app.about.achievements.intro</source>
+        <target>Over the past few years, I’ve reached several key milestones and accomplishments in my projects and professional development:</target>
+      </trans-unit>
+      <trans-unit id="JyYjcaB" resname="app.about.achievements.cdr">
+        <source>app.about.achievements.cdr</source>
+        <target>League of Legends Cooldown Tracker</target>
+      </trans-unit>
+      <trans-unit id="DHluJC9" resname="app.about.achievements.cdr.text">
+        <source>app.about.achievements.cdr.text</source>
+        <target>Successfully launched a site that attracted over 30,000 monthly users, providing real-time game data for strategic decision-making.</target>
+      </trans-unit>
+      <trans-unit id="EXAhwvV" resname="app.about.achievements.draft">
+        <source>app.about.achievements.draft</source>
+        <target>Draft Simulation Tool</target>
+      </trans-unit>
+      <trans-unit id="4.TIn5w" resname="app.about.achievements.draft.text">
+        <source>app.about.achievements.draft.text</source>
+        <target>Developed a real-time draft tool for amateur eSports tournaments, which improved draft strategies and has been widely used within the competitive gaming community.</target>
+      </trans-unit>
+      <trans-unit id="W_xflKB" resname="app.about.achievements.blog">
+        <source>app.about.achievements.blog</source>
+        <target>Personal Portfolio and Blog</target>
+      </trans-unit>
+      <trans-unit id="yaS1T1T" resname="app.about.achievements.blog.text">
+        <source>app.about.achievements.blog.text</source>
+        <target>Built a personal website to showcase my portfolio and improve my knowledge of Symfony. This site also serves as a platform for my blog, where I share insights and document my development journey.</target>
+      </trans-unit>
+      <trans-unit id="q2WV78J" resname="app.about.achievements.tech">
+        <source>app.about.achievements.tech</source>
+        <target>Technical Growth</target>
+      </trans-unit>
+      <trans-unit id="7gr7BU9" resname="app.about.achievements.tech.text">
+        <source>app.about.achievements.tech.text</source>
+        <target>Through various projects, I significantly advanced my understanding of Docker, AWS, Symfony, and full-stack development, all while expanding my ability to integrate complex APIs and real-time data handling with WebSockets.</target>
+      </trans-unit>
+      <trans-unit id="uK9aNYP" resname="app.about.goals.title">
+        <source>app.about.goals.title</source>
+        <target>Future goals and ambitions</target>
+      </trans-unit>
+      <trans-unit id="pfCyCxv" resname="app.about.goals.intro">
+        <source>app.about.goals.intro</source>
+        <target>Looking ahead, I aim to continue growing as a full-stack developer and push the boundaries of my technical expertise:</target>
+      </trans-unit>
+      <trans-unit id="Sz6zZeI" resname="app.about.goals.one">
+        <source>app.about.goals.one</source>
+        <target>Expand Knowledge in AI and Machine Learning</target>
+      </trans-unit>
+      <trans-unit id="XKGVpk3" resname="app.about.goals.one.text">
+        <source>app.about.goals.one.text</source>
+        <target>I’m interested in exploring AI and machine learning technologies, particularly how they can integrate with existing web frameworks to enhance user experience and functionality.</target>
+      </trans-unit>
+      <trans-unit id="OL5v.G1" resname="app.about.goals.two">
+        <source>app.about.goals.two</source>
+        <target>Contribute to Open-Source Projects</target>
+      </trans-unit>
+      <trans-unit id="O0uAUu3" resname="app.about.goals.two.text">
+        <source>app.about.goals.two.text</source>
+        <target>I plan to contribute more to open-source projects, specifically in the areas of real-time web applications, game development tools, and backend frameworks.</target>
+      </trans-unit>
+      <trans-unit id="YYgRSnc" resname="app.about.goals.three">
+        <source>app.about.goals.three</source>
+        <target>Advanced Cloud Solutions</target>
+      </trans-unit>
+      <trans-unit id="bHViHPd" resname="app.about.goals.three.text">
+        <source>app.about.goals.three.text</source>
+        <target>I’d like to deepen my understanding of cloud computing, particularly focusing on scalable solutions in AWS, Docker orchestration (Kubernetes), and CI/CD pipelines.</target>
+      </trans-unit>
+      <trans-unit id="OIReEKn" resname="app.about.goals.four">
+        <source>app.about.goals.four</source>
+        <target>Explore Game Development</target>
+      </trans-unit>
+      <trans-unit id="DTWqplI" resname="app.about.goals.four.text">
+        <source>app.about.goals.four.text</source>
+        <target>Building upon my draft simulation tool, I want to further explore game development—starting with smaller projects related to eSports and strategy games.</target>
+      </trans-unit>
+      <trans-unit id="fnMDew6" resname="app.about.goals.outro">
+        <source>app.about.goals.outro</source>
+        <target>I’m excited about the opportunity to apply my skills in both new and familiar environments, and I’m eager to take on more complex challenges in web and software development.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
