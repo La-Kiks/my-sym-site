@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}CV Kilian A.{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="{{ asset('build/images/favicon/favicon.ico') }}">
+        <link rel="icon" href="{{ asset('build/images/favicon/favicon.ico') }}" media="print">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -84,9 +84,9 @@
         </div>
 
         <!--- Right column 3/4 --->
-        <div class="grid grid-flow-row auto-rows-max gap-2 col-span-2 pr-6">
+        <div class="overflow-hidden grid grid-flow-row auto-rows-max gap-2 col-span-2 pr-6">
             <!--- Header --->
-            <div class="p-2 mb-8 h-fit">
+            <div class="p-2 my-6 h-fit">
                 <h1 class="text-2xl font-mono font-bold text-gray-700 dark:text-white ">
                     Kilian
                     <br>
@@ -97,7 +97,7 @@
             </div>
             <!--- XP pro --->
             <div class="h-fit">
-                <h1 class="text-xl p-1 py-2 font-mono font-bold text-gray-700 bg-gold-tips-50 border border-slate-200 dark:text-white">
+                <h1 class="text-xl px-1 py-2 font-mono font-bold text-gray-700 bg-gold-tips-50 border border-slate-200 dark:text-white">
                     Expériences professionnelles
                 </h1>
                 <div class="px-2">
@@ -110,22 +110,46 @@
                             Nancy | 11/2023 - Présent
                         </h3>
                         <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Site Symfony perso : </span>
+                                    Développement d'un site de portfolio personnel pour présenter mon travail en tant que développeur et explorer les fonctionnalités de Symfony.
+                                    <br>
+                                    <i class="text-gray-500">Symfony 6.4, Tailwind CSS, Webpack Encore, Docker, MySQL, MailHog</i>
+                                </p>
+                            </li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Refonte Cooldown Tracker : </span>
+                                    Refonte de mon site permettant aux joueurs de League of Legends d'accéder rapidement aux informations sur les délais de récupération des champions.
+                                    <br>
+                                    <i class="text-gray-500">Riot Games API, Symfony 7, Bootstrap, Docker, Git, SQlite</i>
+                                </p>
+                            </li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Jeu de draft : </span>
+                                    Création d'un outil de simulation de draft en tour par tour, similaire aux drafts de League of Legends, en temps réel.
+                                    <br>
+                                    <i class="text-gray-500">TypeScript, WebSockets, Docker, Next.js, Git</i>
+                                </p>
+                            </li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Refonte Cooldown Tracker : </span>
+                                    Mon premier site, permettant aux joueurs de League of Legends d'accéder rapidement aux informations sur les délais de récupération des champions. (30 000 users)
+                                    <br>
+                                    <i class="text-gray-500">Python, Flask, Nginx, AWS (EC2), API Riot Games</i>
+                                </p>
+                            </li>
                         </ul>
                     </div>
                     <!--- Coach --->
@@ -134,120 +158,111 @@
                             Coach <span class="font-normal font-serif text-sm">| freelance</span>
                         </h2>
                         <h3 class="font-normal font-mono text-xs text-gray-600">
-                            Nancy | 11/2023 - Présent
+                            Lyon, Tours | 2018 - 2023
                         </h3>
                         <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Solary : </span>
+                                    Coach d'équipe League of Legends au sein de la LFL.
+                                    <br><i>x2 Playoffs </i>
+                                    <i class="font-normal font-mono text-xs text-gray-500"> 11/2022-11/2023</i>
+                                </p>
+                            </li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">LDLC, OL & TPAA (Tony Parker Adequat Academy) : </span>
+                                    Premier entraineur esport de France pour des lycéens en sport-études.
+                                    <br><i> x2 champion France | x1 finaliste et x1 demi-finaliste European Master</i>
+                                    <i class="font-normal font-mono text-xs text-gray-500"> 08/2019-11/2022</i>
+                                </p>
+                            </li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p><span class="font-bold">Autres équipes amateurs et semi-pro : </span>
+                                    Coach équipe League of Legends en France, puis Italie, puis Allemagne.
+                                    <i class="font-normal font-mono text-xs text-gray-500"> 05/2018-07/2019</i>
+                                </p>
+                            </li>
                         </ul>
                     </div>
                     <!--- Skipper --->
                     <div class="mb-4">
                         <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
-                            Loueur de bateaux, skipper <span class="font-normal font-serif text-sm">| Entreprise familiale</span>
+                            Loueur de bateaux, skipper <span class="font-normal font-serif text-sm">| entreprise familiale</span>
                         </h2>
                         <h3 class="font-normal font-mono text-xs text-gray-600">
-                            Nancy | 11/2023 - Présent
+                            Antibes, Cannes | 06/2014- 10/2017
                         </h3>
-                        <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                        </ul>
                     </div>
                 </div>
             </div>
-            <!--- Formation --->
+            <!--- Formations --->
             <div class="h-fit row-span-4">
                 <h1 class="text-xl px-1 py-2 font-mono font-bold text-gray-700 bg-gold-tips-50 border border-slate-200 dark:text-white ">
                     Formations
                 </h1>
-                <div class="px-2">
+                <div class="px-2 grid grid-cols-2">
                     <!--- Grafikart --->
-                    <div class="mb-4">
+                    <div class="mb-4 col-span-2">
                         <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
-                            Grafikart <span class="font-normal font-serif text-sm">| freelance</span>
+                            Grafikart <span class="font-normal font-serif text-sm">| formation en ligne</span>
                         </h2>
                         <h3 class="font-normal font-mono text-xs text-gray-600">
                             Nancy | 11/2023 - Présent
                         </h3>
                         <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p>Formation en autodidaxie au développement web.
+                                    <br>
+                                    <i class="font-normal font-mono text-xs text-gray-500">HTML, CSS, HTTP, PHP, Javascript, Algorithmique, Symfony, SQL...</i>
+                                </p>
+                            </li>
                         </ul>
                     </div>
                     <!--- QLIO --->
                     <div class="mb-4">
                         <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
-                            QLIO <span class="font-normal font-serif text-sm">| freelance</span>
+                            IUT QLIO <span class="font-normal font-serif text-sm">| Université Côte D'azur</span>
                         </h2>
                         <h3 class="font-normal font-mono text-xs text-gray-600">
-                            Nancy | 11/2023 - Présent
+                            Sophia-Antipolis | 2014
                         </h3>
                         <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                        </ul>
-                    </div>
-                    <!--- Polytech --->
-                    <div class="mb-4">
-                        <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
-                            Polytech <span class="font-normal font-serif text-sm">| freelance</span>
-                        </h2>
-                        <h3 class="font-normal font-mono text-xs text-gray-600">
-                            Nancy | 11/2023 - Présent
-                        </h3>
-                        <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p>Diplomé de Qualité, Logistique industrielle et Organisation.
+                                </p>
+                            </li>
                         </ul>
                     </div>
                     <!--- Lycée --->
                     <div class="mb-4">
                         <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
-                            Lycée <span class="font-normal font-serif text-sm">| freelance</span>
+                            BAC S <span class="font-normal font-serif text-sm">| Lycée Mont-St-Jean</span>
                         </h2>
                         <h3 class="font-normal font-mono text-xs text-gray-600">
-                            Nancy | 11/2023 - Présent
+                            Antibes | 2011
                         </h3>
                         <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
-                            <li class="flex mb-0.5 items-center">{{ include('components/_circle.svg.twig') }}
-                                <p><span class="font-bold">Test : </span>
-                                    Text text
-                                </p></li>
+                            <li class="flex mb-0.5 items-start">
+                                <p class="mt-1">
+                                    {{ include('components/_circle.svg.twig') }}
+                                </p>
+                                <p>Titulaire d'un bac S option maths.
+                                </p>
+                            </li>
                         </ul>
                     </div>
                 </div>
