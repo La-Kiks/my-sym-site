@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CV Kilian A.{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{ asset('build/images/favicon/favicon.ico') }}" media="print">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="grid gap-4 h-screen bg-gray-300">
+<!--- A4 box --->
+<div class="grid gap-4 grid-cols-3 bg-white m-auto w-[793px] h-[1122px]">
+    <!--- Left column 1/4 --->
+    <div class="overflow-hidden grid grid-flow-row auto-rows-max gap-2 grid-span-1 bg-gold-tips-50 border-r border-slate-200">
+        <!--- Image --->
+        <div class="p-2 h-fit">
+            <img    class="object-cover object-top w-full h-64 border border-slate-200"
+                    alt="An image of the website, showing a table."
+                    src="{{ asset('build/images/PP-KiKi-LFL.png') }}">
+        </div>
+        <!--- Infos --->
+        <div class="p-2 h-fit">
+            <h1 class="text-xl font-mono font-bold text-gray-700 dark:text-white ">
+                Personal Information
+            </h1>
+            <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="3" y="5" width="18" height="14" rx="2" />  <polyline points="3 7 12 13 21 7" /></svg>
+                    kilian.audroin@gmail.com</li>
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+                    +33 6 95 55 82 97</li>
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="11" r="3" />  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1 -2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" /></svg>
+                    Nancy, 54000, France</li>
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+                    kilian-audroin</li>
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></svg>
+                    A, B, Boat</li>
+                <li class="flex mb-0.5"><svg class="h-5 w-5 text-slate-800 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="3.6" y1="9" x2="20.4" y2="9" />  <line x1="3.6" y1="15" x2="20.4" y2="15" />  <path d="M11.5 3a17 17 0 0 0 0 18" />  <path d="M12.5 3a17 17 0 0 1 0 18" /></svg>
+                    <a class="underline" href="https://kilian-au.fr/">https://kilian-au.fr/</a></li>
+            </ul>
+        </div>
+        <!--- Langues --->
+        <div class="p-2 h-fit">
+            <h1 class="text-xl font-mono font-bold text-gray-700 dark:text-white ">
+                Languages
+            </h1>
+            <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                <li class="mb-0.5">Native French</li>
+                <li class="mb-0.5">Bilingual English</li>
+            </ul>
+        </div>
+        <!--- Être --->
+        <div class="p-2 h-fit">
+            <h1 class="text-xl font-mono font-bold text-gray-700 dark:text-white ">
+                Soft Skills
+            </h1>
+            <p class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                Teamwork, Autonomy, Adaptability, Cheerful, Curious, Meticulous
+            </p>
+        </div>
+        <!--- Faire --->
+        <div class="p-2 h-fit">
+            <h1 class="text-xl font-mono font-bold text-gray-700 dark:text-white ">
+                Technical Skills
+            </h1>
+            <p class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                Project management, Team management, Backend development, Symfony
+            </p>
+        </div>
+        <!--- Intérêt --->
+        <div class="p-2 h-fit">
+            <h1 class="text-xl font-mono font-bold text-gray-700 dark:text-white ">
+                Interests
+            </h1>
+            <p class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                Swimming & Water Polo (10+ years), Scuba diving (Level 2), Gaming, Ballroom dancing
+            </p>
+        </div>
+    </div>
+
+    <!--- Right column 3/4 --->
+    <div class="overflow-hidden grid grid-flow-row auto-rows-max gap-2 col-span-2 pr-6">
+        <!--- Header --->
+        <div class="p-2 mt-6 mb-4 h-fit">
+            <h1 class="text-2xl font-mono font-bold text-gray-700 dark:text-white ">
+                Kilian
+                <br>
+                Audroin
+                <br>
+                <span class="font-normal font-sans">Web developper</span>
+            </h1>
+        </div>
+        <!--- XP pro --->
+        <div class="h-fit">
+            <h1 class="text-xl p-1 mb-3 font-mono font-bold text-gray-700 bg-gold-tips-50 border border-slate-200 dark:text-white">
+                Professional Experience
+            </h1>
+            <div class="px-2">
+                <!--- Web --->
+                <div class="mb-4">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        Web Developer <span class="font-normal font-serif text-sm">| freelance</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Nancy | 11/2023 - Present
+                    </h3>
+                    <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Personal Symfony Site : </span>
+                                Developed a personal portfolio website to showcase my work as a developer and explore the features of Symfony.
+                                <br>
+                                <i class="text-gray-500">Symfony 6.4, Tailwind CSS, Webpack Encore, Docker, MySQL, MailHog</i>
+                            </p>
+                        </li>
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Cooldown Tracker Redesign : </span>
+                                Redesigned my website that allows League of Legends players to quickly access champion cooldown information.
+                                <br>
+                                <i class="text-gray-500">Riot Games API, Symfony 7, Bootstrap, Docker, Git, SQlite</i>
+                            </p>
+                        </li>
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Draft Simulation Game : </span>
+                                Created a turn-based draft simulation tool, similar to League of Legends drafts, in real-time.
+                                <br>
+                                <i class="text-gray-500">TypeScript, WebSockets, Docker, Next.js, Git</i>
+                            </p>
+                        </li>
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Cooldown Tracker Creation : </span>
+                                My first website, allowing League of Legends players to quickly access champion cooldown information (30,000 users).
+                                <br>
+                                <i class="text-gray-500">Python, Flask, Nginx, AWS (EC2), API Riot Games</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!--- Coach --->
+                <div class="mb-4">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        Coach <span class="font-normal font-serif text-sm">| freelance</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Lyon, Tours | 2018 - 2023
+                    </h3>
+                    <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Solary : </span>
+                                League of Legends team coach in the French League of Legends (LFL).
+                                <br><i>x2 Playoffs </i>
+                                <i class="font-normal font-mono text-xs text-gray-500"> 11/2022-11/2023</i>
+                            </p>
+                        </li>
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">LDLC, OL & TPAA (Tony Parker Adequat Academy) : </span>
+                                First esports coach in France for high school students enrolled in sports studies.
+                                <br><i> x2 champion France | x1 finaliste et x1 demi-finaliste European Master</i>
+                                <i class="font-normal font-mono text-xs text-gray-500"> 08/2019-11/2022</i>
+                            </p>
+                        </li>
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p><span class="font-bold">Other Amateur and Semi-Pro Teams : </span>
+                                League of Legends coach in France, then Italy, and Germany.
+                                <i class="font-normal font-mono text-xs text-gray-500"> 05/2018-07/2019</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!--- Skipper --->
+                <div class="mb-4">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        Boat Rental, Skipper <span class="font-normal font-serif text-sm">| family business</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Antibes, Cannes | 06/2014- 10/2017
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!--- Formations --->
+        <div class="h-fit row-span-4">
+            <h1 class="text-xl p-1 mb-3  font-mono font-bold text-gray-700 bg-gold-tips-50 border border-slate-200 dark:text-white ">
+                Education
+            </h1>
+            <div class="px-2 grid grid-cols-2">
+                <!--- Grafikart --->
+                <div class="mb-4 col-span-2">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        Grafikart <span class="font-normal font-serif text-sm">| online training</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Nancy | 11/2023 - Present
+                    </h3>
+                    <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p>Self-taught web development training.
+                                <br>
+                                <i class="font-normal font-mono text-xs text-gray-500">HTML, CSS, HTTP, PHP, Javascript, Algorithms, Symfony, SQL...</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!--- QLIO --->
+                <div class="mb-4">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        IUT QLIO <span class="font-normal font-serif text-sm">| Université Côte D'azur</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Sophia-Antipolis | 2014
+                    </h3>
+                    <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p>Diploma in Industrial Quality, Logistics, and Organization.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!--- Lycée --->
+                <div class="mb-4">
+                    <h2 class="text-base font-mono font-bold text-gray-700 dark:text-white">
+                        BAC S <span class="font-normal font-serif text-sm">| Lycée Mont-St-Jean</span>
+                    </h2>
+                    <h3 class="font-normal font-mono text-xs text-gray-600">
+                        Antibes | 2011
+                    </h3>
+                    <ul class="text-sm font-normal text-left text-gray-600 dark:text-gray-400">
+                        <li class="flex mb-0.5 items-start">
+                            <p class="mt-1">
+                                {{ include('components/_circle.svg.twig') }}
+                            </p>
+                            <p>Scientific Baccalaureate.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
