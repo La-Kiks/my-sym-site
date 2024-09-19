@@ -128,6 +128,7 @@ database-init-dev: ## Init database
 
 database-init-prod: ## Init database
 	$(MAKE) database-drop
+	$(MAKE) delete-migrations
 	$(MAKE) database-create
 	$(MAKE) database-migration-diff
 	$(MAKE) database-migrate
