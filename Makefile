@@ -121,6 +121,7 @@ npm-build: ## Equivalent to npm run dev
 ## —— 📊 Database ——
 database-init-dev: ## Init database
 	$(MAKE) database-drop
+	$(MAKE) delete-migrations
 	$(MAKE) database-create
 	$(MAKE) database-migration
 	$(MAKE) database-migrate
@@ -151,6 +152,9 @@ migration: ## Alias : database-migration
 
 database-migrate: ## Migrate migrations
 	$(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction
+
+delete-migrations: ## Delete the content of migrations folder
+	$(EXEC) find ./migrations -type f -name 'Version*.php' -delete
 
 migrate: ## Alias : database-migrate
 	$(MAKE) database-migrate

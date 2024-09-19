@@ -63,15 +63,15 @@ class RegistrationController extends AbstractController
             $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
 
             // Envoyer l'e-mail
-            $mail->send(
-                'no-reply@openblog.test',
-                $user->getEmail(),
-                'Activation de votre compte sur Kilian-au',
-                'register',
-                compact('user', 'token') // ['user' => $user, 'token'=>$token]
-            );
+//            $mail->send(
+//                'no-reply@openblog.test',
+//                $user->getEmail(),
+//                'Activation de votre compte sur Kilian-au',
+//                'register',
+//                compact('user', 'token') // ['user' => $user, 'token'=>$token]
+//            );
 
-            $this->addFlash('success', 'Utilisateur inscrit, un e-mail a été envoyé.  ');
+//            $this->addFlash('success', 'Utilisateur inscrit, un e-mail a été envoyé.  ');
 
             return $userAuthenticator->authenticateUser(
                 $user,
