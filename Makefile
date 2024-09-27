@@ -2,6 +2,7 @@
 DOCKER = docker
 DOCKER_COMPOSE = docker compose
 EXEC = $(DOCKER) exec -w /var/www/project www_oneblog
+TI  = $(DOCKER) exec -ti www_oneblog 
 PHP = $(EXEC) php
 COMPOSER = $(EXEC) composer
 NPM = $(EXEC) npm
@@ -90,7 +91,8 @@ docker-stop:
 stop-dev:
 	$(DOCKER_COMPOSE) -f docker-compose-dev.yml stop
 	@$(call RED,"The containers are now stopped.")
-
+terminal: # interact with the terminal
+	$(TI) /bin/bash
 ## —— 🎻 Composer ——
 composer-install: ## Install dependencies
 	$(COMPOSER) install
