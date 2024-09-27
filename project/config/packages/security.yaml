@@ -23,7 +23,7 @@ security:
                 resource_owners:
                     google: "/login/check-google"
                     github: "/login/check-github"
-                login_path: /login
+                login_path: /connexion
                 failure_path: hwi_oauth_connect_registration
                 oauth_user_provider:
                     service: hwi_oauth.user.provider.entity

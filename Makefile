@@ -43,6 +43,12 @@ translations: ## Create Symfony Translation FR & EN
 	$(SYMFONY_CONSOLE) translation:extract --force fr  --domain=messages
 	$(SYMFONY_CONSOLE) translation:extract --force en  --domain=messages
 
+debug-route: ## Check all the routes in Symfony
+	$(SYMFONY_CONSOLE)  debug:router
+
+sf: ## Use symfony bin/console with command c=COMMAND
+	$(SYMFONY_CONSOLE) $(c)
+
 ## —— ✅ Test ——
 .PHONY: tests
 tests: ## Run all tests
@@ -93,6 +99,7 @@ stop-dev:
 	@$(call RED,"The containers are now stopped.")
 terminal: # interact with the terminal
 	$(TI) /bin/bash
+
 ## —— 🎻 Composer ——
 composer-install: ## Install dependencies
 	$(COMPOSER) install
